@@ -1,0 +1,27 @@
+{
+  "key": "defi-audit-and-monitoring",
+  "title": "Audit and Monitoring",
+  "summary": "This course talks about how to audit and monitor the smart contracts\n",
+  "details": "In this course we first ....",
+  "duration": "30 mins - 1 hour",
+  "highlights": [
+    "Introduction",
+    "OpenZeppelin - Defender"
+  ],
+  "publishStatus": "Live",
+  "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/audit_and_monitoring.png",
+  "courseAdmins": [],
+  "coursePassContent": "Pass content of Course !!!!!!!!!!",
+  "topics": [
+    {
+      "title": "Intoduction",
+      "key": "intoduction",
+      "details": "Asset Tokenization\n",
+      "order": 0,
+      "explanations": [],
+      "questions": [],
+      "readings": [],
+      "summaries": []
+    }
+  ]
+}
