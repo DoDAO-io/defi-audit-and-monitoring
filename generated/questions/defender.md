@@ -8,190 +8,176 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
  
 ---
 
-##### What is the name of the approach used in Ease protocol to protect users against risks?  
+##### What is the main function of the Defender admin?  
 
-- [x]  RCA
-- [ ]  Traditional coverage
-- [ ]  Risk-based pricing
-- [ ]  Premiums
+- [x]  To manage smart contracts
+- [ ]  To create multisignature wallets
+- [ ]  To provide notifications for events within the smart contract
+- [ ]  To simplify the process of smart contract development
   
 Hint: NoHint
          
-Explanation: The RCA is a way for users/subscribers to protect themselves against risk. It operates like an reciprocal insurance exchange, in which users essentially cover each other.
+Explanation: The Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature wallets instantly, which can be utilized for signing transactions and proposals.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### Does RCA require premiums to be paid in advance?  
+##### What kind of wallets can be created instantly using the Defender admin?  
 
-- [ ]  Yes
-- [x]  No
+- [ ]  Upgradeable wallets
+- [ ]  Single signature wallets
+- [ ]  Timelock wallets
+- [x]  Multisignature wallets
   
-Hint: NoHint
+Hint: Gnosis safe
          
-Explanation: RCA doesn't require any premiums users are only charged at the event of hacks usually known as "covered events".
+Explanation: Multisignature wallets can be created instantly using defender admin.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### What are the advantages of using Ease protocol compared to traditional insurance methods?  
+##### What is the purpose of timelocks in the Defender admin?  
 
-- [ ]  It is more efficient and cost-effective
-- [ ]  It eliminates unnecessary premiums
-- [ ]  No proof of loss is required for coverage
-- [x]  All of the above
+- [ ]  To manage and oversee the actions of both proposers and executors
+- [x]  To delay proposals or function calls in the target contract
+- [ ]  To sign transactions and proposals
+- [ ]  To upgrade smart contracts
   
-Hint: NoHint
+Hint: Delay
          
-Explanation: Ease protocol is more cost effective compared to the traditional insurance as the user's assets will act as a collateral. 
-Users are charged only at the events of hack. No proof of loss is required to cover the assets as the claims can be easily verified.
-
+Explanation: Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### Who decides to liquidate assets for each vault in Ease protocol?  
+##### What is the main function of the defender autotask feature?  
 
-- [ ]  The admin
-- [ ]  The user
-- [x]  The DAO
-- [ ]  The underwriter
-  
-Hint: NoHint
-         
-Explanation: The DAO will decide to liquidate the assets to cover the affected vaults.
-
-Sub Topics: No Sub-Topics
- 
-
----
-
-##### How is the amount to be liquidated from each vault determined in Ease protocol?  
-
-- [ ]  Based on the maximum fee
-- [ ]  Based on the safety ranking
-- [ ]  Based on the total loss from the hack
-- [x]  All of the above
-  
-Hint: NoHint
-         
-Explanation: The loss amount in each vault to be calculated depends on the safety ranking, maximum fee and total loss from the hack.
-
-Sub Topics: No Sub-Topics
- 
-
----
-
-##### What is the proof of deposition in Ease protocol?  
-
-- [ ]  Users will recieve $gvEASE after depositing the assets
-- [x]  Users will recieve ez-tokens after depositing the assets
-- [ ]  A special certificate which is issued at the time of deposition
-- [ ]  A NFT is provided for each depositor
-  
-Hint: NoHint
-         
-Explanation: The user's will recieve ez-tokens after depositing in the vault as a proof of deposition.
-
-Sub Topics: No Sub-Topics
- 
-
----
-
-##### What is the format in which claim payouts will be distributed in Ease DeFi Uninsurance system?  
-
-- [ ]  Ether
-- [ ]  Stablecoin
-- [ ]  $EASE token
+- [ ]  To run javascript snippets on a schedule
+- [ ]  To run javascript snippets in response to sentinel events
+- [ ]  To integrate with third-party services
 - [x]  Both A and B
   
 Hint: NoHint
          
-Explanation: Claim payouts will be distributed in the form of Ether or other fiat-denominated stablecoins to the affected vaults.
+Explanation: The defender autotask feature enables users to run javascript snippets on a schedule, or trigger them in response to sentinel events or public webhooks.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### Is it necessary for claimants to provide proof of loss in order to receive coverage?  
+##### What is the use of webhook feature in Autotasks?  
 
-- [ ]  Yes
-- [x]  No
+- [ ]  To run Autotasks at a specific time
+- [x]  To create a secret URL for Autotasks and invoke it whenever an HTTP request is posted
+- [ ]  To execute functions or multiple functions in response to a sentinel or an event
+- [ ]  To provide gasless transactions for dapp users
   
 Hint: NoHint
          
-Explanation: There is no need for claimants to provide proof of loss in order to receive coverage.
+Explanation: Defender will create a secret URL for your Autotask, and invoke it whenever an HTTP request is posted to that endpoint. You can regenerate this URL at any time.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### What will happen if the staked $EASE tokens are withrawn?  
+##### What is required for the upgradability feature to be available in the Defender admin?  
 
-- [ ]  The $gvEASE tokens will start growing in time
-- [x]  $gvEASE tokens will be lost
-- [ ]  $Armor tokens starts to grow in time
-- [ ]  None of the above
+- [x]  The contract must implement the EIP-1967 standard and the deployed address should be provided
+- [ ]  The contract's ABI must include the pause() and unpause() functions
+- [ ]  The contract must have the “grantRole” and “RevokeRole” functions
+- [ ]  The contract must be added to the admin dashboard
   
 Hint: NoHint
          
-Explanation: The compounded $gvEASE tokens will be lost and cannot be recovered.
+Explanation: Upgradeability is only possible for contracts that implement the EIP-1967 standard, which is verified during the import process.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### What is the ratio of Armour tokens that can be swapped for $EASE token?  
+##### What is a batch proposal?  
 
-- [ ]  2:1
-- [ ]  3:1
-- [x]  1:1
-- [ ]  4:1
+- [ ]  A proposed transaction stored in a digital ledger
+- [ ]  An executable program to perform multiple transactions
+- [x]  A single transaction that includes multiple function calls from one or more contracts
+- [ ]  An application to route transactions from one address to another
   
 Hint: NoHint
          
-Explanation: Since Ease is the upgraded version or next version of ArmourFi, the supply of $EASE and $Armor stays the same. The Armour tokens can be swapped for ease in 1:1 ratio.
+Explanation: A batch proposal refers to a single transaction that includes multiple function calls from one or more contracts. This feature allows for the atomic execution of multiple actions.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### How many maximum new $EASE tokens can be minted after a DAO vote?  
+##### Who is responsible for scheduling and canceling operations with Timelocks?  
 
-- [x]  250 million
-- [ ]  100 million
-- [ ]  500 million
-- [ ]  50 million
+- [x]  Proposers
+- [ ]  Gnosis Safe
+- [ ]  Admin
+- [ ]  Executors
   
 Hint: NoHint
          
-Explanation: The maximum of 250 million $EASE tokens can be minted after a DAO vote in order to maintain the max supply of 1 billion.
+Explanation: The individuals designated as proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations.
 
 Sub Topics: No Sub-Topics
  
 
 ---
 
-##### In what event is coverage not provided in Ease DeFi Uninsurance system?  
+##### What is the most suitable condition for an auto-tasking code snippet?  
 
-- [ ]  Economic design failure
-- [ ]  Deliberate governance attack
-- [ ]  Privileged authority acting in bad faith
-- [x]  If the user lost ez-tokens or lost control of the wallet containing ez-tokens
+- [x]  The code snippet must export a handler function
+- [ ]  The code snippet must be powered by AWS EC2
+- [ ]  The code snippet must be powered by Google cloud
+- [ ]  The code snippet must be powered by Azure
   
 Hint: NoHint
          
-Explanation: The covereage is not provided if the user lost ez-tokens or lost control of the wallet containing ez-tokens.
+Explanation: The code snippet must export a handler function and each auto task must be powered by AWS Lambda.
+
+Sub Topics: No Sub-Topics
+ 
+
+---
+
+##### Which of the following is TRUE for a transaction to trigger a notification?  
+
+- [ ]  The Transaction must directly invoke any of the selected Functions only
+- [x]  Transaction must have a To, From, or Address (from the log) that matches the configured address
+- [ ]  Transaction must have a To address that matches the configured address
+- [ ]  The Transaction must match the Transaction Condition only in case of contract sentinel
+  
+Hint: NoHint
+         
+Explanation: Transaction must have a To, From, or Address (from the log) that matches the configured address. The transaction condition should be matched if specified.
+
+Sub Topics: No Sub-Topics
+ 
+
+---
+
+##### What type of service does Sentinel Services provide?  
+
+- [ ]  Custom webhooks authorisation
+- [ ]  Development support for serverless computing
+- [ ]  Data streaming to Datadog
+- [x]  Comprehensive monitoring solution for transactions on smart contracts
+  
+Hint: NoHint
+         
+Explanation: Sentinels Services provides a comprehensive monitoring solution for transactions on smart contracts. It allows you to establish conditions on events, functions, and transaction parameters, and detect direct calls, internal transactions, and events emitted by the contracts.
 
 Sub Topics: No Sub-Topics
  
