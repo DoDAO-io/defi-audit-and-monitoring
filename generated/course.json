@@ -10,16 +10,368 @@
   ],
   "publishStatus": "Live",
   "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/audit_and_monitoring.png",
-  "courseAdmins": [],
+  "courseAdmins": [
+    "0x34d014758297c00fea49935fce172677904d51ef"
+  ],
   "coursePassContent": "Pass content of Course !!!!!!!!!!",
+  "topicConfig": {
+    "showExplanations": true,
+    "showHints": true
+  },
   "topics": [
     {
-      "title": "Intoduction",
-      "key": "intoduction",
-      "details": "Asset Tokenization\n",
+      "title": "OpenZeppelin Defender",
+      "key": "openzeppelin-defender",
+      "details": "This chapter talks about various features offered by OpenZeppelin defender. The features of  OpenZeppelin defenders helps users to manage the smart-contract development very easily.\n",
       "order": 0,
-      "explanations": [],
-      "questions": [],
+      "explanations": [
+        {
+          "key": "intro-to-covers",
+          "title": "Introduction to Defender",
+          "shortTitle": "Intro",
+          "details": "## Features of Defender Intro OpenZeppelin Defender provides exceptional functionality for the management of smart contracts. Its user-friendly interface allows for the management of multiple smart contracts, the creation of proposals, and the ability to upgrade  contracts within the Defender dashboard, simplifying the process of smart contract development. Additionally, Defender offers notifications for events within the smart contract, eliminating the need for constant monitoring of Etherscan for updates.  The platform's full range of features is outlined in detail below.\n"
+        },
+        {
+          "key": "defender-admin",
+          "title": "Defender Admin",
+          "shortTitle": "Admin",
+          "details": "# Admin\nThe Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following actions:\n**Add contract** * Contract Management\n    Defender Admin allows us to import multiple contracts and manage them directly using the interface.\n* Multisig wallet (Gnosis safe)\n    Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the Gnosis safe.\n* Timelocks\n    Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract. The individuals designated as proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations. The timelock contract itself \n    is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.\n\n\n**Add Proposals** The proposals can be made once the contract is added to the admin dashboard. The smart contracts can be added to the admin dashboard and proposals can be made directly using [Defender Admin API](https://docs.openzeppelin.com/defender/admin-api-reference) and [defender-admin-client](https://www.npmjs.com/package/defender-admin-client).  * Upgrades\n    The Defender Admin provides a straightforward process for upgrading smart contracts. To initiate an upgrade, the next version of the contract must be deployed and its deployed address must be provided in the new implementation address field within the Defender Admin. Upgradeability is only possible for contracts that implement the EIP-1967 standard, which is verified during the import process. Additionally, contracts can be upgraded in a local environment by utilizing the \"updateProxy\" function, which can be accessed by installing the OpenZeppelin package.\n* Modifying access control\n    The Defender Admin allows for the modification of access and roles within the platform itself. For this functionality to be available, the contract must have the “grantRole” and “RevokeRole” functions. If the ABI of the contract includes these functions, Defender provides the capability to fill them using the roles that have been previously indexed in the contract. In instances where a new role needs to be added to the contract, but the function and indexing have not been established, the corresponding “bytes32” of the contract can be provided to add the new role.\n* Pausing and unpausing the contract\n\n    The OpenZeppelin platform offers the ability to pause and resume smart contracts. This feature is implemented as a precautionary measure to protect the contract from potential bugs. The OpenZeppelin Defender allows for the pausing of specific functions and provides modifiers to execute functions while in a paused state. In order to enable this feature, the contract's ABI must include the pause() and unpause() functions. The Defender Admin also includes the capability to check the status of the contract and indicate whether it is currently paused by checking for the paused() or isPaused() function in the contract's ABI.\n\n* Admin actions\n\n    The Defender Admin allows for custom actions to be taken through the use of the admin action feature. This includes the ability to make function calls and create batch proposals. A batch proposal refers to a single transaction that includes multiple function calls from one or more contracts. This feature allows for the atomic execution of multiple actions. To utilize this functionality, it is recommended to use a multisig wallet as the execution strategy and ensure that all batch transactions are executed on the same network.\n"
+        }
+      ],
+      "questions": [
+        {
+          "uuid": "53087795-3805-4252-9d05-0d64b86715d0",
+          "type": "SingleChoice",
+          "content": "What is the name of the approach used in Ease protocol to protect users against risks?",
+          "hint": "NoHint",
+          "explanation": "The RCA is a way for users/subscribers to protect themselves against risk. It operates like an reciprocal insurance exchange, in which users essentially cover each other.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "RCA",
+              "key": "A"
+            },
+            {
+              "content": "Traditional coverage",
+              "key": "B"
+            },
+            {
+              "content": "Risk-based pricing",
+              "key": "C"
+            },
+            {
+              "content": "Premiums",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "4cb92114-fe55-4739-b667-593fecf7c637",
+          "type": "SingleChoice",
+          "content": "Does RCA require premiums to be paid in advance?",
+          "hint": "NoHint",
+          "explanation": "RCA doesn't require any premiums users are only charged at the event of hacks usually known as \"covered events\".",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Yes",
+              "key": "A"
+            },
+            {
+              "content": "No",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "2aa1ac4f-72bc-4576-b1fb-ce7dcffc9db6",
+          "type": "SingleChoice",
+          "content": "What are the advantages of using Ease protocol compared to traditional insurance methods?",
+          "hint": "NoHint",
+          "explanation": "Ease protocol is more cost effective compared to the traditional insurance as the user's assets will act as a collateral. \nUsers are charged only at the events of hack. No proof of loss is required to cover the assets as the claims can be easily verified.\n",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "It is more efficient and cost-effective",
+              "key": "A"
+            },
+            {
+              "content": "It eliminates unnecessary premiums",
+              "key": "B"
+            },
+            {
+              "content": "No proof of loss is required for coverage",
+              "key": "C"
+            },
+            {
+              "content": "All of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8dd3a002-0724-4eef-8f9f-6208204713e1",
+          "type": "SingleChoice",
+          "content": "Who decides to liquidate assets for each vault in Ease protocol?",
+          "hint": "NoHint",
+          "explanation": "The DAO will decide to liquidate the assets to cover the affected vaults.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "The admin",
+              "key": "A"
+            },
+            {
+              "content": "The user",
+              "key": "B"
+            },
+            {
+              "content": "The DAO",
+              "key": "C"
+            },
+            {
+              "content": "The underwriter",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "aae91594-bd07-4a7d-8383-e7933d70e343",
+          "type": "SingleChoice",
+          "content": "How is the amount to be liquidated from each vault determined in Ease protocol?",
+          "hint": "NoHint",
+          "explanation": "The loss amount in each vault to be calculated depends on the safety ranking, maximum fee and total loss from the hack.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Based on the maximum fee",
+              "key": "A"
+            },
+            {
+              "content": "Based on the safety ranking",
+              "key": "B"
+            },
+            {
+              "content": "Based on the total loss from the hack",
+              "key": "C"
+            },
+            {
+              "content": "All of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "66d58f41-9213-4075-846b-5afa04bc0f28",
+          "type": "SingleChoice",
+          "content": "What is the proof of deposition in Ease protocol?",
+          "hint": "NoHint",
+          "explanation": "The user's will recieve ez-tokens after depositing in the vault as a proof of deposition.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "Users will recieve $gvEASE after depositing the assets",
+              "key": "A"
+            },
+            {
+              "content": "Users will recieve ez-tokens after depositing the assets",
+              "key": "B"
+            },
+            {
+              "content": "A special certificate which is issued at the time of deposition",
+              "key": "C"
+            },
+            {
+              "content": "A NFT is provided for each depositor",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f8b85c8f1-23ee-451a-9392-139b1a8d7c46",
+          "type": "SingleChoice",
+          "content": "What is the format in which claim payouts will be distributed in Ease DeFi Uninsurance system?",
+          "hint": "NoHint",
+          "explanation": "Claim payouts will be distributed in the form of Ether or other fiat-denominated stablecoins to the affected vaults.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Ether",
+              "key": "A"
+            },
+            {
+              "content": "Stablecoin",
+              "key": "B"
+            },
+            {
+              "content": "$EASE token",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "92793a88-43d5-4967-8d2b-cab0c3de5c95",
+          "type": "SingleChoice",
+          "content": "Is it necessary for claimants to provide proof of loss in order to receive coverage?",
+          "hint": "NoHint",
+          "explanation": "There is no need for claimants to provide proof of loss in order to receive coverage.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "Yes",
+              "key": "A"
+            },
+            {
+              "content": "No",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "ca04f52f-7d06-4256-8961-f83a988e43b6",
+          "type": "SingleChoice",
+          "content": "What will happen if the staked $EASE tokens are withrawn?",
+          "hint": "NoHint",
+          "explanation": "The compounded $gvEASE tokens will be lost and cannot be recovered.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "The $gvEASE tokens will start growing in time",
+              "key": "A"
+            },
+            {
+              "content": "$gvEASE tokens will be lost",
+              "key": "B"
+            },
+            {
+              "content": "$Armor tokens starts to grow in time",
+              "key": "C"
+            },
+            {
+              "content": "None of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "111cf406-bdea-4fbd-b0f4-77033c0125fb",
+          "type": "SingleChoice",
+          "content": "What is the ratio of Armour tokens that can be swapped for $EASE token?",
+          "hint": "NoHint",
+          "explanation": "Since Ease is the upgraded version or next version of ArmourFi, the supply of $EASE and $Armor stays the same. The Armour tokens can be swapped for ease in 1:1 ratio.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "2:1",
+              "key": "A"
+            },
+            {
+              "content": "3:1",
+              "key": "B"
+            },
+            {
+              "content": "1:1",
+              "key": "C"
+            },
+            {
+              "content": "4:1",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "05f2bac3-41cc-4868-a096-733e8f3c9b17",
+          "type": "SingleChoice",
+          "content": "How many maximum new $EASE tokens can be minted after a DAO vote?",
+          "hint": "NoHint",
+          "explanation": "The maximum of 250 million $EASE tokens can be minted after a DAO vote in order to maintain the max supply of 1 billion.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "250 million",
+              "key": "A"
+            },
+            {
+              "content": "100 million",
+              "key": "B"
+            },
+            {
+              "content": "500 million",
+              "key": "C"
+            },
+            {
+              "content": "50 million",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6758b6fd-9f01-45d2-848e-28def899ca11",
+          "type": "SingleChoice",
+          "content": "In what event is coverage not provided in Ease DeFi Uninsurance system?",
+          "hint": "NoHint",
+          "explanation": "The covereage is not provided if the user lost ez-tokens or lost control of the wallet containing ez-tokens.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Economic design failure",
+              "key": "A"
+            },
+            {
+              "content": "Deliberate governance attack",
+              "key": "B"
+            },
+            {
+              "content": "Privileged authority acting in bad faith",
+              "key": "C"
+            },
+            {
+              "content": "If the user lost ez-tokens or lost control of the wallet containing ez-tokens",
+              "key": "D"
+            }
+          ]
+        }
+      ],
       "readings": [],
       "summaries": []
     }
