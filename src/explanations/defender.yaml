@@ -20,7 +20,7 @@
      wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following
      actions:
 
-     **Add contract** * Contract Management
+     **Add contract** Contract Management
          Defender Admin allows us to import multiple contracts and manage them directly using the interface.
      * Multisig wallet (Gnosis safe)
          Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the
