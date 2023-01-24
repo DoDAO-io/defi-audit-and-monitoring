@@ -132,8 +132,6 @@
   title: Defender Sentinel
   shortTitle: Sentinel
   details: >
-    # Sentinel
-
     Sentinels Services provides a comprehensive monitoring solution for
     transactions on smart contracts. It allows you to establish conditions on
     events, functions, and transaction parameters, and detect direct calls,
