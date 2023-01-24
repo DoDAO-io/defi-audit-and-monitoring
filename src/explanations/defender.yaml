@@ -2,119 +2,144 @@
   title: Introduction to Defender
   shortTitle: Intro
   details: >
-    ## Features of Defender Intro OpenZeppelin Defender provides exceptional functionality for the management of smart contracts. Its user-friendly
-    interface allows for the management of multiple smart contracts, the creation of proposals, and the ability to upgrade  contracts within the
-    Defender dashboard, simplifying the process of smart contract development. Additionally, Defender offers notifications for events within the smart
-    contract, eliminating the need for constant monitoring of Etherscan for updates.  The platform's full range of features is outlined in detail
-    below.
+    ## Features 
 
+    Open Zeppelin Defender provides exceptional functionality for the management
+    of smart contracts. Its user-friendly interface allows for the management of
+    multiple smart contracts, the creation of proposals, and the ability to
+    upgrade  contracts within the Defender dashboard, simplifying the process of
+    smart contract development. Additionally, Defender offers notifications for
+    events within the smart contract, eliminating the need for constant
+    monitoring of Etherscan for updates.  The platform's full range of features
+    is outlined in detail below.
 - key: defender-admin
   title: Defender Admin
   shortTitle: Admin
-  details: >
-   # Admin
+  details: |
+    # Admin
 
-    The Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature
-    wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following
-    actions:
+     The Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature
+     wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following
+     actions:
 
-    **Add contract** * Contract Management
-        Defender Admin allows us to import multiple contracts and manage them directly using the interface.
-    * Multisig wallet (Gnosis safe)
-        Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the
-    Gnosis safe.
-    * Timelocks
-        Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract. The individuals designated as
-    proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations. The timelock contract
-    itself is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.
+     **Add contract** * Contract Management
+         Defender Admin allows us to import multiple contracts and manage them directly using the interface.
+     * Multisig wallet (Gnosis safe)
+         Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the
+     Gnosis safe.
+     * Timelocks
+         Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract. The individuals designated as
+     proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations. The timelock contract
+     itself is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.
 
 
-    **Add Proposals** The proposals can be made once the contract is added to the admin dashboard. The smart contracts can be added to the admin
-    dashboard and proposals can be made directly using [Defender Admin API](https://docs.openzeppelin.com/defender/admin-api-reference) and
-    [defender-admin-client](https://www.npmjs.com/package/defender-admin-client).  
-    * Upgrades
-    The Defender Admin provides a straightforward process for upgrading smart contracts. To initiate an upgrade, the next version of the contract
-    must be deployed and its deployed address must be provided in the new implementation address field within the Defender Admin. Upgradeability is
-    only possible for contracts that implement the EIP-1967 standard, which is verified during the import process. Additionally, contracts can be
-    upgraded in a local environment by utilizing the "updateProxy" function, which can be accessed by installing the OpenZeppelin package.
-    * Modifying access control
-    The Defender Admin allows for the modification of access and roles within the platform itself. For this functionality to be available, the
-    contract must have the “grantRole” and “RevokeRole” functions. If the ABI of the contract includes these functions, Defender provides the
-    capability to fill them using the roles that have been previously indexed in the contract. In instances where a new role needs to be added to the
-    contract, but the function and indexing have not been established, the corresponding “bytes32” of the contract can be provided to add the new
-    role.
-    * Pausing and unpausing the contract
-    The OpenZeppelin platform offers the ability to pause and resume smart contracts. This feature is implemented as a precautionary measure to
-    protect the contract from potential bugs. The OpenZeppelin Defender allows for the pausing of specific functions and provides modifiers to execute
-    functions while in a paused state. In order to enable this feature, the contract's ABI must include the pause() and unpause() functions. The
-    Defender Admin also includes the capability to check the status of the contract and indicate whether it is currently paused by checking for the
-    paused() or isPaused() function in the contract's ABI.
+     **Add Proposals** The proposals can be made once the contract is added to the admin dashboard. The smart contracts can be added to the admin
+     dashboard and proposals can be made directly using [Defender Admin API](https://docs.openzeppelin.com/defender/admin-api-reference) and
+     [defender-admin-client](https://www.npmjs.com/package/defender-admin-client).  
+     * Upgrades
+     The Defender Admin provides a straightforward process for upgrading smart contracts. To initiate an upgrade, the next version of the contract
+     must be deployed and its deployed address must be provided in the new implementation address field within the Defender Admin. Upgradeability is
+     only possible for contracts that implement the EIP-1967 standard, which is verified during the import process. Additionally, contracts can be
+     upgraded in a local environment by utilizing the "updateProxy" function, which can be accessed by installing the OpenZeppelin package.
+     * Modifying access control
+     The Defender Admin allows for the modification of access and roles within the platform itself. For this functionality to be available, the
+     contract must have the “grantRole” and “RevokeRole” functions. If the ABI of the contract includes these functions, Defender provides the
+     capability to fill them using the roles that have been previously indexed in the contract. In instances where a new role needs to be added to the
+     contract, but the function and indexing have not been established, the corresponding “bytes32” of the contract can be provided to add the new
+     role.
+     * Pausing and unpausing the contract
+     The OpenZeppelin platform offers the ability to pause and resume smart contracts. This feature is implemented as a precautionary measure to
+     protect the contract from potential bugs. The OpenZeppelin Defender allows for the pausing of specific functions and provides modifiers to execute
+     functions while in a paused state. In order to enable this feature, the contract's ABI must include the pause() and unpause() functions. The
+     Defender Admin also includes the capability to check the status of the contract and indicate whether it is currently paused by checking for the
+     paused() or isPaused() function in the contract's ABI.
 
-    * Admin actions
-    The Defender Admin allows for custom actions to be taken through the use of the admin action feature. This includes the ability to make
-    function calls and create batch proposals. A batch proposal refers to a single transaction that includes multiple function calls from one or more
-    contracts. This feature allows for the atomic execution of multiple actions. To utilize this functionality, it is recommended to use a multisig
-    wallet as the execution strategy and ensure that all batch transactions are executed on the same network.
-
+     * Admin actions
+     The Defender Admin allows for custom actions to be taken through the use of the admin action feature. This includes the ability to make
+     function calls and create batch proposals. A batch proposal refers to a single transaction that includes multiple function calls from one or more
+     contracts. This feature allows for the atomic execution of multiple actions. To utilize this functionality, it is recommended to use a multisig
+     wallet as the execution strategy and ensure that all batch transactions are executed on the same network.
 - key: defender-autotask
   title: Defender Autotasks
   shortTitle: Autotasks
   details: >
     # AutoTasks
 
-    The defender autotask feature enables users to run javascript snippets on a schedule, or trigger them in response to sentinel events or public
-    webhooks. The integration of autotaks with sentinel and relays makes autotasks more efficient.
+    The defender autotask feature enables users to run javascript snippets on a
+    schedule, or trigger them in response to sentinel events or public webhooks.
+    The integration of autotaks with sentinel and relays makes autotasks more
+    efficient.
 
     **Usecases of Auto Taks**
 
 
 
-    * Withdrawing funds in a deployed contract when it reaches a certain threshold value. * Executing a particular function at a specific time or on a
-    recurring schedule. * Updating on-chain oracle information by making API calls. * Integrating with third-party services using webhooks (HTTP
-    calls). * Providing gasless transactions for dapp users via meta-transactions. * Executing functions or multiple functions in response to a
-    sentinel or an event. * To execute a functions or many functions in response to a sentinel or an event.
+    * Withdrawing funds in a deployed contract when it reaches a certain
+    threshold value. * Executing a particular function at a specific time or on
+    a recurring schedule. * Updating on-chain oracle information by making API
+    calls. * Integrating with third-party services using webhooks (HTTP calls).
+    * Providing gasless transactions for dapp users via meta-transactions. *
+    Executing functions or multiple functions in response to a sentinel or an
+    event. * To execute a functions or many functions in response to a sentinel
+    or an event.
 
-    Auto task can be used by providing a javascript snippet and a triggering event. We can link it to the relayer. Defender currently supports two
-    types of triggers.
+    Auto task can be used by providing a javascript snippet and a triggering
+    event. We can link it to the relayer. Defender currently supports two types
+    of triggers.
 
-    * **Schedule**: Choose how often you would like your Autotask to run, and Defender will make sure to invoke your function at the specified
-    interval. Note that the specified interval is between two consecutive execution starts, not between the end of an Autotask and the beginning of
-    the next one. This way, you can be sure that your Autotask is running as efficiently as possible! 
-    * **Webhook**: Defender will create a secret URL for your Autotask, and invoke it whenever an HTTP request is posted to that endpoint. You can regenerate this URL at any time. Defender will
-    inject the HTTP request information into your Autotask, and return the Autotask run info along with any data you return from your code.
+    * **Schedule**: Choose how often you would like your Autotask to run, and
+    Defender will make sure to invoke your function at the specified interval.
+    Note that the specified interval is between two consecutive execution
+    starts, not between the end of an Autotask and the beginning of the next
+    one. This way, you can be sure that your Autotask is running as efficiently
+    as possible!  * **Webhook**: Defender will create a secret URL for your
+    Autotask, and invoke it whenever an HTTP request is posted to that endpoint.
+    You can regenerate this URL at any time. Defender will inject the HTTP
+    request information into your Autotask, and return the Autotask run info
+    along with any data you return from your code.
 
-    Sentinel-triggered Autotasks cannot be executed on schedule or with a secret URL. They can only be executed from Sentinel or by manual action.
+    Sentinel-triggered Autotasks cannot be executed on schedule or with a secret
+    URL. They can only be executed from Sentinel or by manual action.
 
     Conditions for the auto-tasking code snippet
 
 
 
-    * The code snippet must export a handler function, which is an asynchronous function that will be invoked for each execution of the auto task. *
-    Each auto task must be powered by AWS Lambda. These are server less computing the AWS will manage the execution of the code.
-
+    * The code snippet must export a handler function, which is an asynchronous
+    function that will be invoked for each execution of the auto task. * Each
+    auto task must be powered by AWS Lambda. These are server less computing the
+    AWS will manage the execution of the code.
 - key: defender-sentinel
   title: Defender Sentinel
   shortTitle: Sentinel
   details: >
     # Sentinel
 
-    Sentinels Services provides a comprehensive monitoring solution for transactions on smart contracts. It allows you to establish conditions on
-    events, functions, and transaction parameters, and detect direct calls, internal transactions, and events emitted by the contracts. Sentinels can
-    notify you through various channels such as email, Slack, Telegram, Discord, custom webhooks and even push data to Datadog. Additionally, it also
-    enables you to set up Autotasks to execute in response to a notification.
+    Sentinels Services provides a comprehensive monitoring solution for
+    transactions on smart contracts. It allows you to establish conditions on
+    events, functions, and transaction parameters, and detect direct calls,
+    internal transactions, and events emitted by the contracts. Sentinels can
+    notify you through various channels such as email, Slack, Telegram, Discord,
+    custom webhooks and even push data to Datadog. Additionally, it also enables
+    you to set up Autotasks to execute in response to a notification.
 
-    The defender sentinel offers three types of sentinels * Contract sentinels * Forta sentinels * Forta local sentinals
+    The defender sentinel offers three types of sentinels * Contract sentinels *
+    Forta sentinels * Forta local sentinals
 
-    Sentinels can be used to monitor the transactions in the smart contract. You can specify the conditions for notification, and if the condition is
-    met, the sentinel will notify you via email, Telegram, Discord, etc. The contract sentinel can be used to monitor a single contract, while the
-    forta sentinel can be used to monitor multiple contracts. This gives you more flexibility than using a contract sentinel.
+    Sentinels can be used to monitor the transactions in the smart contract. You
+    can specify the conditions for notification, and if the condition is met,
+    the sentinel will notify you via email, Telegram, Discord, etc. The contract
+    sentinel can be used to monitor a single contract, while the forta sentinel
+    can be used to monitor multiple contracts. This gives you more flexibility
+    than using a contract sentinel.
 
 
-    Matching rules are also an essential part of Contract Sentinels. For a transaction to trigger a notification, it must satisfy all of the
-    following:
+    Matching rules are also an essential part of Contract Sentinels. For a
+    transaction to trigger a notification, it must satisfy all of the following:
 
-    * Transaction **MUST** have a To, From, or Address (from the log) that matches the configured address 
-    * If a **Transaction Condition** is specified
+    * Transaction **MUST** have a To, From, or Address (from the log) that
+    matches the configured address  * If a **Transaction Condition** is
+    specified
         * The Transaction **MUST** match the **Transaction Condition**.
     * If **Events** are selected
         * The Transaction **MUST** emit any of the selected Events and match the **Event Condition** (if any)
@@ -122,77 +147,100 @@
         * The Transaction **MUST** directly invoke any of the selected Functions (contract calls are not detected at the moment) and match the
     **Function Condition** (if any)
 
-    Forta Sentinel is a tool that allows you to monitor alerts that come from a given Forta Bot or affect a given address, and filter those alerts by
-    any conditions that you specify. It then notifies you when those alerts occur. This feature is particularly useful for monitoring specific
-    detection bots and handling alerts internally instead of publishing to the network.
+    Forta Sentinel is a tool that allows you to monitor alerts that come from a
+    given Forta Bot or affect a given address, and filter those alerts by any
+    conditions that you specify. It then notifies you when those alerts occur.
+    This feature is particularly useful for monitoring specific detection bots
+    and handling alerts internally instead of publishing to the network.
 
-    A Forta Sentinel filters on Bot IDs or Addresses and requires that at least one of these filters is set. It is possible to specify multiple Bot
-    IDs and Addresses to filter on. For a Forta Alert to trigger a notification, it must satisfy all of the following:
+    A Forta Sentinel filters on Bot IDs or Addresses and requires that at least
+    one of these filters is set. It is possible to specify multiple Bot IDs and
+    Addresses to filter on. For a Forta Alert to trigger a notification, it must
+    satisfy all of the following:
 
 
 
-    * The Forta Alert MUST come from one of the Bot IDs specified and/or one of the Addresses specified * If the Alert ID Condition is specified, the
-    Alert ID from the alert MUST match one of the Alert IDs specified * If the Severity Condition is specified, the Alert Severity MUST match or be of
+    * The Forta Alert MUST come from one of the Bot IDs specified and/or one of
+    the Addresses specified * If the Alert ID Condition is specified, the Alert
+    ID from the alert MUST match one of the Alert IDs specified * If the
+    Severity Condition is specified, the Alert Severity MUST match or be of
     greater severity than the one specified
-
 - key: defender-relayer
   title: Defender Relay
   shortTitle: Relay
   details: >
     # Relay
 
-    The Openzeppelin Defender's relayer feature simplifies the process of making smart contract transactions by eliminating the need for private keys.
-    Instead, transactions can be made through HTTP API calls, removing the need for managing private keys and other complexities such as transaction
-    fees and nounces.
+    The Openzeppelin Defender's relayer feature simplifies the process of making
+    smart contract transactions by eliminating the need for private keys.
+    Instead, transactions can be made through HTTP API calls, removing the need
+    for managing private keys and other complexities such as transaction fees
+    and nounces.
 
-    To utilize the relayer feature, users must first create a relayer, which will have its own private key that is kept secure and invisible to the
-    user. Once created, the relayer will provide a secret key and API key, which must be saved as it cannot be retrieved later.
+    To utilize the relayer feature, users must first create a relayer, which
+    will have its own private key that is kept secure and invisible to the user.
+    Once created, the relayer will provide a secret key and API key, which must
+    be saved as it cannot be retrieved later.
 
-    With these keys, transactions can be made through the relayer. Each relayer can have one or more API keys, and it is necessary to send Ether to
-    the relayer to cover gas fees. The relayer will also send notifications if the balance falls below 0.1 Ether.
+    With these keys, transactions can be made through the relayer. Each relayer
+    can have one or more API keys, and it is necessary to send Ether to the
+    relayer to cover gas fees. The relayer will also send notifications if the
+    balance falls below 0.1 Ether.
 
-    ### Use cases of Relayer 
-    * Use Defender Relayer every time you use a hot wallet in your code. 
-    * Connect to a Relayer instead to simplify key management and transaction submissions. 
-    * Use a Defender Relayer when you need to trigger a state transition in your contracts. 
-    * Use a Defender Relayer to update on-chain oracles with external data. 
-    * Use a Defender Relayer to send meta-transactions to build a gasless experience. 
-    * Use a Defender Relayer to react to sign-ups in your app by airdropping tokens to new users. 
-    * Use a Defender Relayer to sweep funds from protocol contracts to secure wallets. 
-    * Use a Defender Relayer to build bots for interacting with smart contract protocols.
-
+    ### Use cases of Relayer  * Use Defender Relayer every time you use a hot
+    wallet in your code.  * Connect to a Relayer instead to simplify key
+    management and transaction submissions.  * Use a Defender Relayer when you
+    need to trigger a state transition in your contracts.  * Use a Defender
+    Relayer to update on-chain oracles with external data.  * Use a Defender
+    Relayer to send meta-transactions to build a gasless experience.  * Use a
+    Defender Relayer to react to sign-ups in your app by airdropping tokens to
+    new users.  * Use a Defender Relayer to sweep funds from protocol contracts
+    to secure wallets.  * Use a Defender Relayer to build bots for interacting
+    with smart contract protocols.
 - key: defender-logging
   title: Defender Logging
   shortTitle: Logging
   details: >
     # Logging
 
-    The Defender offers a premium feature called Logging, which allows users to view all events that occur within the Defender. This feature is
-    particularly useful for tracking user sign-ins and sign-outs, managing teams, detecting potential attacks on infrastructure through failed sign-in
-    attempts, and monitoring relayer activity to understand transactions being sent from accounts. Logging also facilitates audits in automating,
-    relaying, and sentinels. The logs generated can be forwarded to other services such as Data Log or Splunk that support API key authentication.
+    The Defender offers a premium feature called Logging, which allows users to
+    view all events that occur within the Defender. This feature is particularly
+    useful for tracking user sign-ins and sign-outs, managing teams, detecting
+    potential attacks on infrastructure through failed sign-in attempts, and
+    monitoring relayer activity to understand transactions being sent from
+    accounts. Logging also facilitates audits in automating, relaying, and
+    sentinels. The logs generated can be forwarded to other services such as
+    Data Log or Splunk that support API key authentication.
 
-    ### Use cases of Logging
-    * Use Defender Logging to monitor all changes and actions on your system 
-    * Track user actions on your team by monitoring sign-ins and activity across the application 
-    * Detect potential security breaches by monitoring failed sign-in attempts 
-    * Track relayer activity to understand the transactions being sent from your accounts 
-    * Create an audit trail of all changes to your Autotasks, Sentinels, and Relayers for compliance and security purposes.
-
+    ### Use cases of Logging * Use Defender Logging to monitor all changes and
+    actions on your system  * Track user actions on your team by monitoring
+    sign-ins and activity across the application  * Detect potential security
+    breaches by monitoring failed sign-in attempts  * Track relayer activity to
+    understand the transactions being sent from your accounts  * Create an audit
+    trail of all changes to your Autotasks, Sentinels, and Relayers for
+    compliance and security purposes.
 - key: defender-advisors
   title: Defender Advisors
   shortTitle: Advisors
   details: >
-    When it comes to securing your project, it's essential to have a clear understanding of the best practices and guidelines to follow. The
-    OpenZeppelin team has created the Defender Advisor service to provide a comprehensive knowledge base of security best practices for development,
+    When it comes to securing your project, it's essential to have a clear
+    understanding of the best practices and guidelines to follow. The
+    OpenZeppelin team has created the Defender Advisor service to provide a
+    comprehensive knowledge base of security best practices for development,
     testing, monitoring, and operations.
 
-    The Defender Advisor can be used as a checklist to prioritize efforts in implementing project security. Each security best practice in Defender
-    Advisor is rated for criticality and effort, and contains examples for implementation. This allows you to evaluate your current security practices
-    against established best practices, prioritize additional best practices to implement, and improve security training and awareness within your
+    The Defender Advisor can be used as a checklist to prioritize efforts in
+    implementing project security. Each security best practice in Defender
+    Advisor is rated for criticality and effort, and contains examples for
+    implementation. This allows you to evaluate your current security practices
+    against established best practices, prioritize additional best practices to
+    implement, and improve security training and awareness within your
     development and operations teams.
 
-    The best practice articles in Defender Advisor are organized into four categories: Development, Monitoring, Testing and Operations. Each article
-    is also rated for the importance of the best practice, either Critical, High, or Normal. Additionally, each article is identified for the expected
-    effort to implement, which can be Large, Medium, or Small. With the controls on the column headers, you can filter and sort the list of articles
-    to find the specific best practices that are most relevant to your project.
+    The best practice articles in Defender Advisor are organized into four
+    categories: Development, Monitoring, Testing and Operations. Each article is
+    also rated for the importance of the best practice, either Critical, High,
+    or Normal. Additionally, each article is identified for the expected effort
+    to implement, which can be Large, Medium, or Small. With the controls on the
+    column headers, you can filter and sort the list of articles to find the
+    specific best practices that are most relevant to your project.
