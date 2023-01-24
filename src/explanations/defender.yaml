@@ -164,8 +164,6 @@
   title: Defender Relay
   shortTitle: Relay
   details: >
-    # Relay
-
     The Openzeppelin Defender's relayer feature simplifies the process of making
     smart contract transactions by eliminating the need for private keys.
     Instead, transactions can be made through HTTP API calls, removing the need
