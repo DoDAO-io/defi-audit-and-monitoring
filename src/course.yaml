@@ -8,7 +8,9 @@ highlights:
 publishStatus: Live
 thumbnail: >-
   https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/audit_and_monitoring.png
-details: In this course we first ....
+details: |2-
+   # Coming Soon
+  This course will be rolled out in next two weeks
 duration: 30 mins - 1 hour
 topics:
   - key: openzeppelin-defender
