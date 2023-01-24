@@ -291,6 +291,8 @@
     comprehensive knowledge base of security best practices for development,
     testing, monitoring, and operations.
 
+
+
     The Defender Advisor can be used as a checklist to prioritize efforts in
     implementing project security. Each security best practice in Defender
     Advisor is rated for criticality and effort, and contains examples for
@@ -298,6 +300,8 @@
     against established best practices, prioritize additional best practices to
     implement, and improve security training and awareness within your
     development and operations teams.
+
+
 
     The best practice articles in Defender Advisor are organized into four
     categories: Development, Monitoring, Testing and Operations. Each article is
