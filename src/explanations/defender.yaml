@@ -21,12 +21,12 @@
      actions:
 
      ### Add contract :
-    **Contract Management :**
+    - **Contract Management :**
          Defender Admin allows us to import multiple contracts and manage them directly using the interface.
-     **Multisig wallet (Gnosis safe) :**
+     - **Multisig wallet (Gnosis safe) :**
          Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the
      Gnosis safe.
-     **Timelocks :**
+     - **Timelocks :**
          Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract. The individuals designated as
      proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations. The timelock contract
      itself is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.
