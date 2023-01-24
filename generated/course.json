@@ -28,7 +28,7 @@
         {
           "key": "intro-to-covers",
           "shortTitle": "Intro",
-          "details": "## Features \nOpen Zeppelin Defender provides exceptional functionality for the management of smart contracts. Its user-friendly interface allows for the management of multiple smart contracts, the creation of proposals, and the ability to upgrade  contracts within the Defender dashboard, simplifying the process of smart contract development. Additionally, Defender offers notifications for events within the smart contract, eliminating the need for constant monitoring of Etherscan for updates.  The platform's full range of features is outlined in detail below.\n",
+          "details": "Open Zeppelin Defender provides exceptional functionality for the management of smart contracts. Its user-friendly interface allows for the management of multiple smart contracts, the creation of proposals, and the ability to upgrade  contracts within the Defender dashboard, simplifying the process of smart contract development. Additionally, Defender offers notifications for events within the smart contract, eliminating the need for constant monitoring of Etherscan for updates.  The platform's full range of features is outlined in next sections.\n",
           "title": "Introduction to Defender"
         },
         {
