@@ -134,8 +134,13 @@
     custom webhooks and even push data to Datadog. Additionally, it also enables
     you to set up Autotasks to execute in response to a notification.
 
-    The defender sentinel offers three types of sentinels * Contract sentinels *
-    Forta sentinels * Forta local sentinals
+    The defender sentinel offers three types of sentinels 
+
+    * Contract sentinels 
+
+    * Forta sentinels 
+
+    * Forta local sentinals
 
     Sentinels can be used to monitor the transactions in the smart contract. You
     can specify the conditions for notification, and if the condition is met,
@@ -149,14 +154,14 @@
     transaction to trigger a notification, it must satisfy all of the following:
 
     * Transaction **MUST** have a To, From, or Address (from the log) that
-    matches the configured address  * If a **Transaction Condition** is
-    specified
-        * The Transaction **MUST** match the **Transaction Condition**.
-    * If **Events** are selected
+    matches the configured address  
+
+    * The Transaction **MUST** match the **Transaction Condition** if specified.
+
+    * If **Events** are selected :
         * The Transaction **MUST** emit any of the selected Events and match the **Event Condition** (if any)
     * If **Functions** are selected
-        * The Transaction **MUST** directly invoke any of the selected Functions (contract calls are not detected at the moment) and match the
-    **Function Condition** (if any)
+        * The Transaction **MUST** directly invoke any of the selected Functions (contract calls are not detected at the moment) and match the **Function Condition** (if any)
 
     Forta Sentinel is a tool that allows you to monitor alerts that come from a
     given Forta Bot or affect a given address, and filter those alerts by any
@@ -172,10 +177,13 @@
 
 
     * The Forta Alert MUST come from one of the Bot IDs specified and/or one of
-    the Addresses specified * If the Alert ID Condition is specified, the Alert
-    ID from the alert MUST match one of the Alert IDs specified * If the
-    Severity Condition is specified, the Alert Severity MUST match or be of
-    greater severity than the one specified
+    the Addresses specified. 
+
+    * If the Alert ID Condition is specified, the Alert ID from the alert MUST
+    match one of the Alert IDs specified. 
+
+    * If the Severity Condition is specified, the Alert Severity MUST match or
+    be of greater severity than the one specified.
 - key: defender-relayer
   title: Defender Relay
   shortTitle: Relay
