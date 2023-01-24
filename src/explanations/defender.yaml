@@ -65,7 +65,7 @@
 - key: defender-autotask
   title: Defender Autotasks
   shortTitle: Autotasks
-  details: >
+  details: >-
     The defender autotask feature enables users to run javascript snippets on a
     schedule, or trigger them in response to sentinel events or public webhooks.
     The integration of autotaks with sentinel and relays makes autotasks more
@@ -122,6 +122,12 @@
 
     - Each auto task must be powered by AWS Lambda. These are server less
     computing the AWS will manage the execution of the code.
+
+
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Autotask-create-1.png?raw=true)
+
+
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Autotask-create-2.png?raw=true)
 - key: defender-sentinel
   title: Defender Sentinel
   shortTitle: Sentinel
