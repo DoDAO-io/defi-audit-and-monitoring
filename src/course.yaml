@@ -11,9 +11,17 @@ details: >-
   In this course we first ....
 duration: 30 mins - 1 hour
 topics:
-  - key: intoduction
-    title: Intoduction
-    details: >+
-      Asset Tokenization
-courseAdmins: []
+  - key: openzeppelin-defender
+    title: OpenZeppelin Defender
+    details: >
+      This chapter talks about various features offered by OpenZeppelin defender. The features of 
+      OpenZeppelin defenders helps users to manage the smart-contract development very easily.
+    explanations: defender.yaml
+    questions: defender.yaml
+    status: In Progress
+courseAdmins:
+  - '0x34d014758297c00fea49935fce172677904d51ef'
 coursePassContent: Pass content of Course !!!!!!!!!!
+topicConfig:
+  showExplanations: true
+  showHints: true
