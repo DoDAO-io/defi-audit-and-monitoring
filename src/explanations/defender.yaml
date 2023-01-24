@@ -172,26 +172,42 @@
     for managing private keys and other complexities such as transaction fees
     and nounces.
 
+
     To utilize the relayer feature, users must first create a relayer, which
     will have its own private key that is kept secure and invisible to the user.
     Once created, the relayer will provide a secret key and API key, which must
     be saved as it cannot be retrieved later.
+
 
     With these keys, transactions can be made through the relayer. Each relayer
     can have one or more API keys, and it is necessary to send Ether to the
     relayer to cover gas fees. The relayer will also send notifications if the
     balance falls below 0.1 Ether.
 
-    ### Use cases of Relayer  * Use Defender Relayer every time you use a hot
-    wallet in your code.  * Connect to a Relayer instead to simplify key
-    management and transaction submissions.  * Use a Defender Relayer when you
-    need to trigger a state transition in your contracts.  * Use a Defender
-    Relayer to update on-chain oracles with external data.  * Use a Defender
-    Relayer to send meta-transactions to build a gasless experience.  * Use a
-    Defender Relayer to react to sign-ups in your app by airdropping tokens to
-    new users.  * Use a Defender Relayer to sweep funds from protocol contracts
-    to secure wallets.  * Use a Defender Relayer to build bots for interacting
-    with smart contract protocols.
+
+    ### Use cases of Relayer  
+
+    * Use Defender Relayer every time you use a hot wallet in your code.  
+
+    * Connect to a Relayer instead to simplify key management and transaction
+    submissions. 
+
+    * Use a Defender Relayer when you need to trigger a state transition in your
+    contracts.  
+
+    * Use a Defender Relayer to update on-chain oracles with external data.  
+
+    * Use a Defender Relayer to send meta-transactions to build a gasless
+    experience.  
+
+    * Use a Defender Relayer to react to sign-ups in your app by airdropping
+    tokens to new users.  
+
+    * Use a Defender Relayer to sweep funds from protocol contracts to secure
+    wallets.  
+
+    * Use a Defender Relayer to build bots for interacting with smart contract
+    protocols.
 - key: defender-logging
   title: Defender Logging
   shortTitle: Logging
