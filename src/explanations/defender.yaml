@@ -74,16 +74,25 @@
 
     - Withdrawing funds in a deployed contract when it reaches a certain
     threshold value. - Executing a particular function at a specific time or on
-    a recurring schedule. - Updating on-chain oracle information by making API
-    calls. * Integrating with third-party services using webhooks (HTTP calls).
-    * Providing gasless transactions for dapp users via meta-transactions. -
-    Executing functions or multiple functions in response to a sentinel or an
-    event. - To execute a functions or many functions in response to a sentinel
-    or an event.
+    a recurring schedule. 
+
+    - Updating on-chain oracle information by making API calls. 
+
+    - Integrating with third-party services using webhooks (HTTP calls). 
+
+    - Providing gasless transactions for dapp users via meta-transactions. 
+
+    - Executing functions or multiple functions in response to a sentinel or an
+    event. 
+
+    - To execute a functions or many functions in response to a sentinel or an
+    event.
+
 
     Auto task can be used by providing a javascript snippet and a triggering
     event. We can link it to the relayer. Defender currently supports two types
     of triggers.
+
 
     - **Schedule**: Choose how often you would like your Autotask to run, and
     Defender will make sure to invoke your function at the specified interval.
@@ -101,7 +110,8 @@
     Sentinel-triggered Autotasks cannot be executed on schedule or with a secret
     URL. They can only be executed from Sentinel or by manual action.
 
-    Conditions for the auto-tasking code snippet
+
+    ### Conditions for the auto-tasking code snippet
 
 
 
