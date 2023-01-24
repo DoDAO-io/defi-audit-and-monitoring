@@ -142,6 +142,7 @@
 
     * Forta local sentinals
 
+
     Sentinels can be used to monitor the transactions in the smart contract. You
     can specify the conditions for notification, and if the condition is met,
     the sentinel will notify you via email, Telegram, Discord, etc. The contract
