@@ -151,12 +151,18 @@
     * Forta local sentinals
 
 
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Sentinel-1.png?raw=true)
+
+
     Sentinels can be used to monitor the transactions in the smart contract. You
     can specify the conditions for notification, and if the condition is met,
     the sentinel will notify you via email, Telegram, Discord, etc. The contract
     sentinel can be used to monitor a single contract, while the forta sentinel
     can be used to monitor multiple contracts. This gives you more flexibility
     than using a contract sentinel.
+
+
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Sentinel-2.png?raw=true)
 
 
     Matching rules are also an essential part of Contract Sentinels. For a
