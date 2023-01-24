@@ -13,14 +13,15 @@
 - key: defender-admin
   title: Defender Admin
   shortTitle: Admin
-  details: |
+  details: >
     # Admin
 
      The Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature
      wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following
      actions:
 
-     **Add contract** Contract Management
+     **Add contract :** 
+    * Contract Management
          Defender Admin allows us to import multiple contracts and manage them directly using the interface.
      * Multisig wallet (Gnosis safe)
          Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the
@@ -31,15 +32,17 @@
      itself is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.
 
 
-     **Add Proposals** The proposals can be made once the contract is added to the admin dashboard. The smart contracts can be added to the admin
+     **Add Proposals:** 
+    The proposals can be made once the contract is added to the admin dashboard.
+    The smart contracts can be added to the admin
      dashboard and proposals can be made directly using [Defender Admin API](https://docs.openzeppelin.com/defender/admin-api-reference) and
      [defender-admin-client](https://www.npmjs.com/package/defender-admin-client).  
-     * Upgrades
+     * Upgrades 
      The Defender Admin provides a straightforward process for upgrading smart contracts. To initiate an upgrade, the next version of the contract
      must be deployed and its deployed address must be provided in the new implementation address field within the Defender Admin. Upgradeability is
      only possible for contracts that implement the EIP-1967 standard, which is verified during the import process. Additionally, contracts can be
      upgraded in a local environment by utilizing the "updateProxy" function, which can be accessed by installing the OpenZeppelin package.
-     * Modifying access control
+     * Modifying access control 
      The Defender Admin allows for the modification of access and roles within the platform itself. For this functionality to be available, the
      contract must have the “grantRole” and “RevokeRole” functions. If the ABI of the contract includes these functions, Defender provides the
      capability to fill them using the roles that have been previously indexed in the contract. In instances where a new role needs to be added to the
