@@ -207,7 +207,10 @@
     smart contract transactions by eliminating the need for private keys.
     Instead, transactions can be made through HTTP API calls, removing the need
     for managing private keys and other complexities such as transaction fees
-    and nounces.
+    and ounces.
+
+
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Relay-dashboard.png?raw=true)
 
 
     To utilize the relayer feature, users must first create a relayer, which
