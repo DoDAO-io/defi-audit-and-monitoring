@@ -246,13 +246,20 @@
     sentinels. The logs generated can be forwarded to other services such as
     Data Log or Splunk that support API key authentication.
 
-    ### Use cases of Logging * Use Defender Logging to monitor all changes and
-    actions on your system  * Track user actions on your team by monitoring
-    sign-ins and activity across the application  * Detect potential security
-    breaches by monitoring failed sign-in attempts  * Track relayer activity to
-    understand the transactions being sent from your accounts  * Create an audit
-    trail of all changes to your Autotasks, Sentinels, and Relayers for
-    compliance and security purposes.
+    ### Use cases of Logging 
+
+    * Use Defender Logging to monitor all changes and actions on your system  
+
+    * Track user actions on your team by monitoring sign-ins and activity across
+    the application  
+
+    * Detect potential security breaches by monitoring failed sign-in attempts  
+
+    * Track relayer activity to understand the transactions being sent from your
+    accounts  
+
+    * Create an audit trail of all changes to your Autotasks, Sentinels, and
+    Relayers for compliance and security purposes.
 - key: defender-advisors
   title: Defender Advisors
   shortTitle: Advisors
