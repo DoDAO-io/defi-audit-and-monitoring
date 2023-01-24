@@ -61,16 +61,13 @@
   title: Defender Autotasks
   shortTitle: Autotasks
   details: >
-    # AutoTasks
-
     The defender autotask feature enables users to run javascript snippets on a
     schedule, or trigger them in response to sentinel events or public webhooks.
     The integration of autotaks with sentinel and relays makes autotasks more
     efficient.
 
-    **Usecases of Auto Taks**
 
-
+    ### Usecases of Auto Tasks
 
     * Withdrawing funds in a deployed contract when it reaches a certain
     threshold value. * Executing a particular function at a specific time or on
