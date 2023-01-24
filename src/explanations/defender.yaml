@@ -20,6 +20,8 @@
      wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following
      actions:
 
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Admin-dashboard.png?raw=true)
+
      ### Add contract :
     - **Contract Management :**
          Defender Admin allows us to import multiple contracts and manage them directly using the interface.
