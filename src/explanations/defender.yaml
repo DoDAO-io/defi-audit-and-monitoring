@@ -263,6 +263,10 @@
     sentinels. The logs generated can be forwarded to other services such as
     Data Log or Splunk that support API key authentication.
 
+
+    ![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/add-log-forwarding.png?raw=true)
+
+
     ### Use cases of Logging 
 
     * Use Defender Logging to monitor all changes and actions on your system  
