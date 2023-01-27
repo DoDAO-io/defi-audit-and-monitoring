@@ -13,15 +13,6 @@ details: |2-
   This course will be rolled out in next two weeks
 duration: 30 mins - 1 hour
 topics:
-  - key: openzeppelin-defender
-    title: OpenZeppelin Defender
-    details: >
-      This chapter talks about various features offered by OpenZeppelin
-      defender. The features of  OpenZeppelin defenders helps users to manage
-      the smart-contract development very easily.
-    explanations: defender.yaml
-    questions: defender.yaml
-    status: In Progress
   - key: introduction
     title: Introduction
     details: >+
@@ -34,6 +25,15 @@ topics:
       reliable, and that it will function as intended when deployed on a
       blockchain network.
 
+  - key: openzeppelin-defender
+    title: OpenZeppelin Defender
+    details: >
+      This chapter talks about various features offered by OpenZeppelin
+      defender. The features of  OpenZeppelin defenders helps users to manage
+      the smart-contract development very easily.
+    explanations: defender.yaml
+    questions: defender.yaml
+    status: In Progress
 courseAdmins:
   - '0x34d014758297c00fea49935fce172677904d51ef'
   - '0x2a6af0619be90d129ab0d70c10e25c097b6ec67d'
