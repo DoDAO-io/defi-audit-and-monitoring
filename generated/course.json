@@ -2,7 +2,7 @@
   "key": "defi-audit-and-monitoring",
   "title": "Audit and Monitoring",
   "summary": "This course talks about how to audit and monitor the smart contracts\n",
-  "details": " # Coming Soon\nThis course will be rolled out in next two weeks",
+  "details": "Smart contract auditing is the process of reviewing and testing the source code of a smart contract to identify any potential vulnerabilities or security issues. This can include checking for errors in the code, evaluating the contract's overall design and architecture, and testing the contract's functionality to ensure that it performs as intended. The goal of a smart contract audit is to ensure that the contract is secure and reliable, and that it will function as intended when deployed on a blockchain network.\n\nIn this course we will study\n1. Chapter 1 - Introduction - What is auditing and monitoring, important points to consider, etc.\n2. Chapter 2 - OpenZepplin Defender \n3. Chapter 3 - Forta\n4. Chapter 4 - Dune Analytics",
   "duration": "30 mins - 1 hour",
   "highlights": [
     "Introduction",
