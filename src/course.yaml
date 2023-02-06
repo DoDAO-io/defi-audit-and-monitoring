@@ -51,6 +51,19 @@ topics:
     explanations: defender.yaml
     questions: defender.yaml
     status: In Progress
+  
+  - key: forta
+    title: Forta
+    details: >
+      This chapter covers the different features of Forta. You'll learn how this 
+      system works, what FORT tokens are used for, and how to prevent hacks using 
+      Forta's security features.
+    explanations: forta.yaml
+    questions: forta.yaml
+    status: In Progress
+
+
+
 courseAdmins:
   - '0x34d014758297c00fea49935fce172677904d51ef'
   - '0x2a6af0619be90d129ab0d70c10e25c097b6ec67d'

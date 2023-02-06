@@ -2,23 +2,27 @@
   title: Introduction to Forta
   shortTitle: Intro
   details: >
-    # Forta
-
-    # What is Forta
+    ### What is Forta
 
     Forta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time. Forta's monitoring network and bots help keep an eye on smart contracts so you can be sure they're running smoothly. Forta also has several features that make transaction monitoring easy and efficient.
 
     Forta is a network of independent node operators that scan all transactions and block-by-block state changes for outlier transactions and threats. When an issue is detected, node operators send alerts to subscribers of potential risks, which enables them to take action.  It is the first real-time detection network for the security & operational monitoring of blockchain activity. Forta offers real-time protection against potential risks and threats on the blockchain, so you can rest assured that your transactions are safe.
 
 
-    # Use Cases of Forta and forta bots
-    * Forta bots can be used to monitor the contract
-    * Forta can be used to detect threats and send alerts instantly
-    * Users can run scan nodes to receive FORT tokens
-    * The detection bots can monitor 24/7 so the protection and security of contract will increase
-    * Machine learning can be used to develop high level detection bots which makes the monitor even more efficient
+    ### Use Cases of Forta and detection bots
+    
+    - Forta bots can be used to monitor the contract 
+    - Develop complex mitigation scripts that query the API for specific bots' alerts and automate smart contract operations based on the received alerts
+    - Notify users of potential threats and governance changes in the dApp
+    - Build an extension to wallets such as Metamask to display warnings about a particular wallet address or smart contract users are about to interact with
+    - Users can run scan nodes to receive FORT tokens and ensuring consensus
+    - Analyze alerts from several blockchain projects and identify trends before making investment decisions as a financial analyst
+    - Machine learning can be used to develop high level detection bots which makes the monitor even more efficient
+    - Decide whether to provide coverage or process claims for a particular smart contract by analyzing its alerts to gauge its security as an insurance protocol
 
-    ### How to build a Forta bot?
+
+    ### Example to build a Forta detection bot
+    
     Forta provides SDKs to build bots very easily in order to initialize the project run `npx forta-agent@latest init` in a new folder.
     Enter the password and open the project. The README file in the project will explain all the functionalities. The main file which we will be working on is agent.js in the src folder. Initially, the address will be for Tether but we can add more addresses to track.
 
@@ -109,7 +113,8 @@
   title: Working of Forta
   shortTitle: Working
   details: >
-    # How Forta works?
+    ### How Forta works?
+    
     Forta basically divided into four parts they are SCanner nodes, Detection bots, Assigner, and Analyzer.
     
     * **Scan node**
@@ -126,11 +131,12 @@
         The Analyzer is the cloud-based component of Forta that allows for the sending of alerts to a private API. The scan nodes send the alerts to the private API, which then authenticates the scanner nodes, verifies that they are registered and staked, and validates the signatures on all artifacts sent from scanners. The Analyzer will also store alerts in a central database, as well as trigger notifications for users via Slack, Discord, Telegram, Email, or webhooks. When an alert is generated, a post request will be created via webhook. The Analyzer is currently centralized.
 
 
-- key: defender-admin
-  title: Defender Admin
-  shortTitle: Admin
+- key: why-Forta
+  title: Why Forta
+  shortTitle: Why Forta
   details: >
     ### Why Forta?
+    
     There have been a lot of Defi protocol hacks in recent years. With the number of protocols increasing, auditing and monitoring have become more difficult. The emerging Defi protocol needs more auditing to ensure the safety of users' funds.
 
     In January of 2022, a wormhole protocol lost over 320 million dollars worth of assets due to a hack. This is just one example of how, as the Web3 economy grows in value and complexity, security has become an increasingly critical concern. In the first quarter of 2022 alone, more than one billion dollars were lost to hacks and exploits - some of which weren't even discovered until days after the initial attack. This highlights the need for real-time security and operational monitoring so that protocols and investors can react quickly to threats and prevent or minimize loss of funds.
@@ -150,22 +156,22 @@
 
     Fort Tokens are used especially for two cases.
 
-    **Node runners**: Node runners should stake FORT tokens in order to prevent malicious behavior. Since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously.
+    **Node runners** : Node runners should stake FORT tokens in order to prevent malicious behavior. Since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously.
 
-    **Detection bot signaling: **FORT tokens are staked in detection bots signaling bot quality to the network.  Having fake or low-quality bots on the network makes it harder to find the best risk-detection offerings.
-- key: defender-admin
-  title: Defender Admin
-  shortTitle: Admin
+    **Detection bot signaling** :FORT tokens are staked in detection bots signaling bot quality to the network.  Having fake or low-quality bots on the network makes it harder to find the best risk-detection offerings.
+- key: prevent-hack-forta
+  title: Forta's Prevention of Hack Attacks
+  shortTitle: Prevention of hack
   details: >
-    # How Forta could have prevented million dollars hacks
+    ### How Forta could have prevented million dollars hacks
 
     let's take a look at a real-world hack that occurred and how forta could have helped prevent it poly network is a protocol that enables cross-chain interoperability and sending assets across different blockchains in august of 2021 the poly network was exploited across multiple chains amounting to funds lost of up to 600 million us dollars the largest defy hack in history. The exploit took place over 184 blocks or a duration of about 40 minutes with forta runtime threat detection the exploit could have been flagged within seconds and mitigated to prevent any losses. Source: [link](https://en.wikipedia.org/wiki/Poly_Network_exploit#:~:text=They%20posted%20a%20Q%26A%20to,returned%20first%20on%20August%2011.).
 
-    There is a function in the Victim protocol's contract that allows you to run cross-chain transactions it verifies that the transaction is from one of the authorized **bookkeepers** as set in the eth cross-chain data contract and then executes that transaction. Basically, the **bookkeeper **is an address that can make any transaction and it had a function modifier of onlyOwner.
+    There is a function in the Victim protocol's contract that allows you to run cross-chain transactions it verifies that the transaction is from one of the authorized **bookkeepers** as set in the eth cross-chain data contract and then executes that transaction. Basically, the **bookkeeper** is an address that can make any transaction and it had a function modifier of onlyOwner.
 
     The hacker found an exploit here and carefully crafted an exploit transaction that invoked the setter function to change the **bookkeeper** to an address they controlled once assigned as the bookkeeper they could make transactions to withdraw any amount of funds.
 
-    If we have deployed forta detection bots in the contract we can make logic to check that if there is a change in the **bookkeeper **immediately return findings which could create an alert.
+    If we have deployed forta detection bots in the contract we can make logic to check that if there is a change in the **bookkeeper** immediately return findings which could create an alert.
 
     So instantly the contract can be paused other measures can be taken. This is very great because these detection bots can monitor 24/7. Using machine learning we can improvise these bots a lot.
 

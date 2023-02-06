@@ -109,6 +109,7 @@
   content: What is the function of Assigner?
   hint: NoHint
   explanation: The Assigner will assigns and deassigns the scanner nodes and detection bots. It is currently centralized.
+  answerKeys:
     - D
   difficultyLevel: "Medium"
   choices:
@@ -163,7 +164,7 @@
   type: SingleChoice
   content: How scanner node will send findings to the Analyzer?
   hint: NoHint
-  explanation: Transaction must have a To, From, or Address (from the log) that matches the configured address. The transaction condition should be matched if specified.
+  explanation: Scanner node will make a API call to send findings to the Analyzer.
   answerKeys:
     - B
   difficultyLevel: "Medium"

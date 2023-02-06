@@ -21,61 +21,62 @@
   },
   "topics": [
     {
-      "key": "introduction",
       "title": "Introduction",
+      "key": "introduction",
       "details": "Smart contract auditing is the process of reviewing and testing the source code of a smart contract to identify any potential vulnerabilities or security issues. This can include checking for errors in the code, evaluating the contract's overall design and architecture, and testing the contract's functionality to ensure that it performs as intended. The goal of a smart contract audit is to ensure that the contract is secure and reliable, and that it will function as intended when deployed on a blockchain network.\n\n",
+      "order": 0,
       "explanations": [],
+      "questions": [],
       "readings": [],
-      "summaries": [],
-      "questions": []
+      "summaries": []
     },
     {
       "title": "OpenZeppelin Defender",
       "key": "openzeppelin-defender",
       "details": "This chapter talks about various features offered by OpenZeppelin defender. The features of  OpenZeppelin defenders helps users to manage the smart-contract development very easily.\n",
-      "order": 0,
+      "order": 1,
       "explanations": [
         {
           "key": "intro-to-covers",
+          "title": "Introduction to Defender",
           "shortTitle": "Intro",
-          "details": "Open Zeppelin Defender provides exceptional functionality for the management of smart contracts. Its user-friendly interface allows for the management of multiple smart contracts, the creation of proposals, and the ability to upgrade  contracts within the Defender dashboard, simplifying the process of smart contract development. Additionally, Defender offers notifications for events within the smart contract, eliminating the need for constant monitoring of Etherscan for updates.  The platform's full range of features is outlined in next sections.\n",
-          "title": "Introduction to Defender"
+          "details": "Open Zeppelin Defender provides exceptional functionality for the management of smart contracts. Its user-friendly interface allows for the management of multiple smart contracts, the creation of proposals, and the ability to upgrade  contracts within the Defender dashboard, simplifying the process of smart contract development. Additionally, Defender offers notifications for events within the smart contract, eliminating the need for constant monitoring of Etherscan for updates.  The platform's full range of features is outlined in next sections.\n"
         },
         {
           "key": "defender-admin",
+          "title": "Defender Admin",
           "shortTitle": "Admin",
-          "details": "# Admin\n\n The Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature\n wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following\n actions:\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Admin-dashboard.png?raw=true)\n\n ### Add contract :\n- **Contract Management :**\n     Defender Admin allows us to import multiple contracts and manage them directly using the interface.\n - **Multisig wallet (Gnosis safe) :**\n     Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the\n Gnosis safe.\n - **Timelocks :**\n     Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract. The individuals designated as\n proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations. The timelock contract\n itself is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.\n\n\n ### Add Proposals :\nThe proposals can be made once the contract is added to the admin dashboard. The smart contracts can be added to the admin\n dashboard and proposals can be made directly using [Defender Admin API](https://docs.openzeppelin.com/defender/admin-api-reference) and\n [defender-admin-client](https://www.npmjs.com/package/defender-admin-client).  \n - **Upgrades :**\n The Defender Admin provides a straightforward process for upgrading smart contracts. To initiate an upgrade, the next version of the contract\n must be deployed and its deployed address must be provided in the new implementation address field within the Defender Admin. Upgradeability is\n only possible for contracts that implement the EIP-1967 standard, which is verified during the import process. Additionally, contracts can be\n upgraded in a local environment by utilizing the \"updateProxy\" function, which can be accessed by installing the OpenZeppelin package.\n - **Modifying access control :** \n The Defender Admin allows for the modification of access and roles within the platform itself. For this functionality to be available, the\n contract must have the “grantRole” and “RevokeRole” functions. If the ABI of the contract includes these functions, Defender provides the\n capability to fill them using the roles that have been previously indexed in the contract. In instances where a new role needs to be added to the\n contract, but the function and indexing have not been established, the corresponding “bytes32” of the contract can be provided to add the new\n role.\n - **Pausing and unpausing the contract :**\n The OpenZeppelin platform offers the ability to pause and resume smart contracts. This feature is implemented as a precautionary measure to\n protect the contract from potential bugs. The OpenZeppelin Defender allows for the pausing of specific functions and provides modifiers to execute\n functions while in a paused state. In order to enable this feature, the contract's ABI must include the pause() and unpause() functions. The\n Defender Admin also includes the capability to check the status of the contract and indicate whether it is currently paused by checking for the\n paused() or isPaused() function in the contract's ABI.\n\n - **Admin actions :**\n The Defender Admin allows for custom actions to be taken through the use of the admin action feature. This includes the ability to make\n function calls and create batch proposals. A batch proposal refers to a single transaction that includes multiple function calls from one or more\n contracts. This feature allows for the atomic execution of multiple actions. To utilize this functionality, it is recommended to use a multisig\n wallet as the execution strategy and ensure that all batch transactions are executed on the same network.\n",
-          "title": "Defender Admin"
+          "details": "# Admin\n\n The Defender admin serves as a centralized platform for managing all of our smart contracts. It offers the capability to create multi-signature\n wallets instantly, which can be utilized for signing transactions and proposals. The Defender admin also enables users to perform the following\n actions:\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Admin-dashboard.png?raw=true)\n\n ### Add contract :\n- **Contract Management :**\n     Defender Admin allows us to import multiple contracts and manage them directly using the interface.\n - **Multisig wallet (Gnosis safe) :**\n     Multisignature wallets can be created instantly and can be used to sign transactions. The threshold value can also be given while creating the\n Gnosis safe.\n - **Timelocks :**\n     Timelocks are smart contracts that allow for the delay of proposals or function calls in the target contract. The individuals designated as\n proposers are responsible for scheduling and canceling operations, while executors handle the execution of these operations. The timelock contract\n itself is assigned the admin role, allowing it to manage and oversee the actions of both proposers and executors.\n\n\n ### Add Proposals :\nThe proposals can be made once the contract is added to the admin dashboard. The smart contracts can be added to the admin\n dashboard and proposals can be made directly using [Defender Admin API](https://docs.openzeppelin.com/defender/admin-api-reference) and\n [defender-admin-client](https://www.npmjs.com/package/defender-admin-client).  \n - **Upgrades :**\n The Defender Admin provides a straightforward process for upgrading smart contracts. To initiate an upgrade, the next version of the contract\n must be deployed and its deployed address must be provided in the new implementation address field within the Defender Admin. Upgradeability is\n only possible for contracts that implement the EIP-1967 standard, which is verified during the import process. Additionally, contracts can be\n upgraded in a local environment by utilizing the \"updateProxy\" function, which can be accessed by installing the OpenZeppelin package.\n - **Modifying access control :** \n The Defender Admin allows for the modification of access and roles within the platform itself. For this functionality to be available, the\n contract must have the “grantRole” and “RevokeRole” functions. If the ABI of the contract includes these functions, Defender provides the\n capability to fill them using the roles that have been previously indexed in the contract. In instances where a new role needs to be added to the\n contract, but the function and indexing have not been established, the corresponding “bytes32” of the contract can be provided to add the new\n role.\n - **Pausing and unpausing the contract :**\n The OpenZeppelin platform offers the ability to pause and resume smart contracts. This feature is implemented as a precautionary measure to\n protect the contract from potential bugs. The OpenZeppelin Defender allows for the pausing of specific functions and provides modifiers to execute\n functions while in a paused state. In order to enable this feature, the contract's ABI must include the pause() and unpause() functions. The\n Defender Admin also includes the capability to check the status of the contract and indicate whether it is currently paused by checking for the\n paused() or isPaused() function in the contract's ABI.\n\n - **Admin actions :**\n The Defender Admin allows for custom actions to be taken through the use of the admin action feature. This includes the ability to make\n function calls and create batch proposals. A batch proposal refers to a single transaction that includes multiple function calls from one or more\n contracts. This feature allows for the atomic execution of multiple actions. To utilize this functionality, it is recommended to use a multisig\n wallet as the execution strategy and ensure that all batch transactions are executed on the same network.\n"
         },
         {
           "key": "defender-autotask",
+          "title": "Defender Autotasks",
           "shortTitle": "Autotasks",
-          "details": "The defender autotask feature enables users to run javascript snippets on a schedule, or trigger them in response to sentinel events or public webhooks. The integration of autotaks with sentinel and relays makes autotasks more efficient.\n\n### Usecases of Auto Tasks\n- Withdrawing funds in a deployed contract when it reaches a certain threshold value. - Executing a particular function at a specific time or on a recurring schedule. \n- Updating on-chain oracle information by making API calls. \n- Integrating with third-party services using webhooks (HTTP calls). \n- Providing gasless transactions for dapp users via meta-transactions. \n- Executing functions or multiple functions in response to a sentinel or an event. \n- To execute a functions or many functions in response to a sentinel or an event.\n\nAuto task can be used by providing a javascript snippet and a triggering event. We can link it to the relayer. Defender currently supports two types of triggers.\n\n- **Schedule**: Choose how often you would like your Autotask to run, and Defender will make sure to invoke your function at the specified interval. Note that the specified interval is between two consecutive execution starts, not between the end of an Autotask and the beginning of the next one. This way, you can be sure that your Autotask is running as efficiently as possible!  \n- **Webhook**: Defender will create a secret URL for your Autotask, and invoke it whenever an HTTP request is posted to that endpoint. You can regenerate this URL at any time. Defender will inject the HTTP request information into your Autotask, and return the Autotask run info along with any data you return from your code.\nSentinel-triggered Autotasks cannot be executed on schedule or with a secret URL. They can only be executed from Sentinel or by manual action.\n\n### Conditions for the auto-tasking code snippet\n\n\n- The code snippet must export a handler function, which is an asynchronous function that will be invoked for each execution of the auto task. \n- Each auto task must be powered by AWS Lambda. These are server less computing the AWS will manage the execution of the code.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Autotask-create-1.png?raw=true)\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Autotask-create-2.png?raw=true)",
-          "title": "Defender Autotasks"
+          "details": "The defender autotask feature enables users to run javascript snippets on a schedule, or trigger them in response to sentinel events or public webhooks. The integration of autotaks with sentinel and relays makes autotasks more efficient.\n\n### Usecases of Auto Tasks\n- Withdrawing funds in a deployed contract when it reaches a certain threshold value. - Executing a particular function at a specific time or on a recurring schedule. \n- Updating on-chain oracle information by making API calls. \n- Integrating with third-party services using webhooks (HTTP calls). \n- Providing gasless transactions for dapp users via meta-transactions. \n- Executing functions or multiple functions in response to a sentinel or an event. \n- To execute a functions or many functions in response to a sentinel or an event.\n\nAuto task can be used by providing a javascript snippet and a triggering event. We can link it to the relayer. Defender currently supports two types of triggers.\n\n- **Schedule**: Choose how often you would like your Autotask to run, and Defender will make sure to invoke your function at the specified interval. Note that the specified interval is between two consecutive execution starts, not between the end of an Autotask and the beginning of the next one. This way, you can be sure that your Autotask is running as efficiently as possible!  \n- **Webhook**: Defender will create a secret URL for your Autotask, and invoke it whenever an HTTP request is posted to that endpoint. You can regenerate this URL at any time. Defender will inject the HTTP request information into your Autotask, and return the Autotask run info along with any data you return from your code.\nSentinel-triggered Autotasks cannot be executed on schedule or with a secret URL. They can only be executed from Sentinel or by manual action.\n\n### Conditions for the auto-tasking code snippet\n\n\n- The code snippet must export a handler function, which is an asynchronous function that will be invoked for each execution of the auto task. \n- Each auto task must be powered by AWS Lambda. These are server less computing the AWS will manage the execution of the code.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Autotask-create-1.png?raw=true)\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Autotask-create-2.png?raw=true)"
         },
         {
           "key": "defender-sentinel",
+          "title": "Defender Sentinel",
           "shortTitle": "Sentinel",
-          "details": "# Sentinel\nSentinels Services provides a comprehensive monitoring solution for transactions on smart contracts. It allows you to establish conditions on events, functions, and transaction parameters, and detect direct calls, internal transactions, and events emitted by the contracts. Sentinels can notify you through various channels such as email, Slack, Telegram, Discord, custom webhooks and even push data to Datadog. Additionally, it also enables you to set up Autotasks to execute in response to a notification.\nThe defender sentinel offers three types of sentinels \n* Contract sentinels \n* Forta sentinels \n* Forta local sentinals\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Sentinel-1.png?raw=true)\n\nSentinels can be used to monitor the transactions in the smart contract. You can specify the conditions for notification, and if the condition is met, the sentinel will notify you via email, Telegram, Discord, etc. The contract sentinel can be used to monitor a single contract, while the forta sentinel can be used to monitor multiple contracts. This gives you more flexibility than using a contract sentinel.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Sentinel-2.png?raw=true)\n\nMatching rules are also an essential part of Contract Sentinels. For a transaction to trigger a notification, it must satisfy all of the following:\n* Transaction **MUST** have a To, From, or Address (from the log) that matches the configured address  \n* The Transaction **MUST** match the **Transaction Condition** if specified.\n* If **Events** are selected :\n    * The Transaction **MUST** emit any of the selected Events and match the **Event Condition** (if any)\n* If **Functions** are selected\n    * The Transaction **MUST** directly invoke any of the selected Functions (contract calls are not detected at the moment) and match the **Function Condition** (if any)\n\nForta Sentinel is a tool that allows you to monitor alerts that come from a given Forta Bot or affect a given address, and filter those alerts by any conditions that you specify. It then notifies you when those alerts occur. This feature is particularly useful for monitoring specific detection bots and handling alerts internally instead of publishing to the network.\nA Forta Sentinel filters on Bot IDs or Addresses and requires that at least one of these filters is set. It is possible to specify multiple Bot IDs and Addresses to filter on. For a Forta Alert to trigger a notification, it must satisfy all of the following:\n\n\n* The Forta Alert MUST come from one of the Bot IDs specified and/or one of the Addresses specified. \n* If the Alert ID Condition is specified, the Alert ID from the alert MUST match one of the Alert IDs specified. \n* If the Severity Condition is specified, the Alert Severity MUST match or be of greater severity than the one specified.\n",
-          "title": "Defender Sentinel"
+          "details": "# Sentinel\nSentinels Services provides a comprehensive monitoring solution for transactions on smart contracts. It allows you to establish conditions on events, functions, and transaction parameters, and detect direct calls, internal transactions, and events emitted by the contracts. Sentinels can notify you through various channels such as email, Slack, Telegram, Discord, custom webhooks and even push data to Datadog. Additionally, it also enables you to set up Autotasks to execute in response to a notification.\nThe defender sentinel offers three types of sentinels \n* Contract sentinels \n* Forta sentinels \n* Forta local sentinals\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Sentinel-1.png?raw=true)\n\nSentinels can be used to monitor the transactions in the smart contract. You can specify the conditions for notification, and if the condition is met, the sentinel will notify you via email, Telegram, Discord, etc. The contract sentinel can be used to monitor a single contract, while the forta sentinel can be used to monitor multiple contracts. This gives you more flexibility than using a contract sentinel.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Sentinel-2.png?raw=true)\n\nMatching rules are also an essential part of Contract Sentinels. For a transaction to trigger a notification, it must satisfy all of the following:\n* Transaction **MUST** have a To, From, or Address (from the log) that matches the configured address  \n* The Transaction **MUST** match the **Transaction Condition** if specified.\n* If **Events** are selected :\n    * The Transaction **MUST** emit any of the selected Events and match the **Event Condition** (if any)\n* If **Functions** are selected\n    * The Transaction **MUST** directly invoke any of the selected Functions (contract calls are not detected at the moment) and match the **Function Condition** (if any)\n\nForta Sentinel is a tool that allows you to monitor alerts that come from a given Forta Bot or affect a given address, and filter those alerts by any conditions that you specify. It then notifies you when those alerts occur. This feature is particularly useful for monitoring specific detection bots and handling alerts internally instead of publishing to the network.\nA Forta Sentinel filters on Bot IDs or Addresses and requires that at least one of these filters is set. It is possible to specify multiple Bot IDs and Addresses to filter on. For a Forta Alert to trigger a notification, it must satisfy all of the following:\n\n\n* The Forta Alert MUST come from one of the Bot IDs specified and/or one of the Addresses specified. \n* If the Alert ID Condition is specified, the Alert ID from the alert MUST match one of the Alert IDs specified. \n* If the Severity Condition is specified, the Alert Severity MUST match or be of greater severity than the one specified.\n"
         },
         {
           "key": "defender-relayer",
+          "title": "Defender Relay",
           "shortTitle": "Relay",
-          "details": "The Openzeppelin Defender's relayer feature simplifies the process of making smart contract transactions by eliminating the need for private keys. Instead, transactions can be made through HTTP API calls, removing the need for managing private keys and other complexities such as transaction fees and ounces.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Relay-dashboard.png?raw=true)\n\nTo utilize the relayer feature, users must first create a relayer, which will have its own private key that is kept secure and invisible to the user. Once created, the relayer will provide a secret key and API key, which must be saved as it cannot be retrieved later.\n\nWith these keys, transactions can be made through the relayer. Each relayer can have one or more API keys, and it is necessary to send Ether to the relayer to cover gas fees. The relayer will also send notifications if the balance falls below 0.1 Ether.\n\n### Use cases of Relayer  \n* Use Defender Relayer every time you use a hot wallet in your code.  \n* Connect to a Relayer instead to simplify key management and transaction submissions. \n* Use a Defender Relayer when you need to trigger a state transition in your contracts.  \n* Use a Defender Relayer to update on-chain oracles with external data.  \n* Use a Defender Relayer to send meta-transactions to build a gasless experience.  \n* Use a Defender Relayer to react to sign-ups in your app by airdropping tokens to new users.  \n* Use a Defender Relayer to sweep funds from protocol contracts to secure wallets.  \n* Use a Defender Relayer to build bots for interacting with smart contract protocols.\n",
-          "title": "Defender Relay"
+          "details": "The Openzeppelin Defender's relayer feature simplifies the process of making smart contract transactions by eliminating the need for private keys. Instead, transactions can be made through HTTP API calls, removing the need for managing private keys and other complexities such as transaction fees and ounces.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/Relay-dashboard.png?raw=true)\n\nTo utilize the relayer feature, users must first create a relayer, which will have its own private key that is kept secure and invisible to the user. Once created, the relayer will provide a secret key and API key, which must be saved as it cannot be retrieved later.\n\nWith these keys, transactions can be made through the relayer. Each relayer can have one or more API keys, and it is necessary to send Ether to the relayer to cover gas fees. The relayer will also send notifications if the balance falls below 0.1 Ether.\n\n### Use cases of Relayer  \n* Use Defender Relayer every time you use a hot wallet in your code.  \n* Connect to a Relayer instead to simplify key management and transaction submissions. \n* Use a Defender Relayer when you need to trigger a state transition in your contracts.  \n* Use a Defender Relayer to update on-chain oracles with external data.  \n* Use a Defender Relayer to send meta-transactions to build a gasless experience.  \n* Use a Defender Relayer to react to sign-ups in your app by airdropping tokens to new users.  \n* Use a Defender Relayer to sweep funds from protocol contracts to secure wallets.  \n* Use a Defender Relayer to build bots for interacting with smart contract protocols.\n"
         },
         {
           "key": "defender-logging",
+          "title": "Defender Logging",
           "shortTitle": "Logging",
-          "details": "# Logging\nThe Defender offers a premium feature called Logging, which allows users to view all events that occur within the Defender. This feature is particularly useful for tracking user sign-ins and sign-outs, managing teams, detecting potential attacks on infrastructure through failed sign-in attempts, and monitoring relayer activity to understand transactions being sent from accounts. Logging also facilitates audits in automating, relaying, and sentinels. The logs generated can be forwarded to other services such as Data Log or Splunk that support API key authentication.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/add-log-forwarding.png?raw=true)\n\n### Use cases of Logging \n* Use Defender Logging to monitor all changes and actions on your system  \n* Track user actions on your team by monitoring sign-ins and activity across the application  \n* Detect potential security breaches by monitoring failed sign-in attempts  \n* Track relayer activity to understand the transactions being sent from your accounts  \n* Create an audit trail of all changes to your Autotasks, Sentinels, and Relayers for compliance and security purposes.\n",
-          "title": "Defender Logging"
+          "details": "# Logging\nThe Defender offers a premium feature called Logging, which allows users to view all events that occur within the Defender. This feature is particularly useful for tracking user sign-ins and sign-outs, managing teams, detecting potential attacks on infrastructure through failed sign-in attempts, and monitoring relayer activity to understand transactions being sent from accounts. Logging also facilitates audits in automating, relaying, and sentinels. The logs generated can be forwarded to other services such as Data Log or Splunk that support API key authentication.\n\n![DEFENDER](https://github.com/DoDAO-io/defi-audit-and-monitoring/blob/main/images/add-log-forwarding.png?raw=true)\n\n### Use cases of Logging \n* Use Defender Logging to monitor all changes and actions on your system  \n* Track user actions on your team by monitoring sign-ins and activity across the application  \n* Detect potential security breaches by monitoring failed sign-in attempts  \n* Track relayer activity to understand the transactions being sent from your accounts  \n* Create an audit trail of all changes to your Autotasks, Sentinels, and Relayers for compliance and security purposes.\n"
         },
         {
           "key": "defender-advisors",
+          "title": "Defender Advisors",
           "shortTitle": "Advisors",
-          "details": "When it comes to securing your project, it's essential to have a clear understanding of the best practices and guidelines to follow. The OpenZeppelin team has created the Defender Advisor service to provide a comprehensive knowledge base of security best practices for development, testing, monitoring, and operations.\n\n\nThe Defender Advisor can be used as a checklist to prioritize efforts in implementing project security. Each security best practice in Defender Advisor is rated for criticality and effort, and contains examples for implementation. This allows you to evaluate your current security practices against established best practices, prioritize additional best practices to implement, and improve security training and awareness within your development and operations teams.\n\n\nThe best practice articles in Defender Advisor are organized into four categories: Development, Monitoring, Testing and Operations. Each article is also rated for the importance of the best practice, either Critical, High, or Normal. Additionally, each article is identified for the expected effort to implement, which can be Large, Medium, or Small. With the controls on the column headers, you can filter and sort the list of articles to find the specific best practices that are most relevant to your project.\n",
-          "title": "Defender Advisors"
+          "details": "When it comes to securing your project, it's essential to have a clear understanding of the best practices and guidelines to follow. The OpenZeppelin team has created the Defender Advisor service to provide a comprehensive knowledge base of security best practices for development, testing, monitoring, and operations.\n\n\nThe Defender Advisor can be used as a checklist to prioritize efforts in implementing project security. Each security best practice in Defender Advisor is rated for criticality and effort, and contains examples for implementation. This allows you to evaluate your current security practices against established best practices, prioritize additional best practices to implement, and improve security training and awareness within your development and operations teams.\n\n\nThe best practice articles in Defender Advisor are organized into four categories: Development, Monitoring, Testing and Operations. Each article is also rated for the importance of the best practice, either Critical, High, or Normal. Additionally, each article is identified for the expected effort to implement, which can be Large, Medium, or Small. With the controls on the column headers, you can filter and sort the list of articles to find the specific best practices that are most relevant to your project.\n"
         }
       ],
       "questions": [
@@ -394,6 +395,340 @@
             },
             {
               "content": "Comprehensive monitoring solution for transactions on smart contracts",
+              "key": "D"
+            }
+          ]
+        }
+      ],
+      "readings": [],
+      "summaries": []
+    },
+    {
+      "title": "Forta",
+      "key": "forta",
+      "details": "This chapter covers the different features of Forta. You'll learn how this  system works, what FORT tokens are used for, and how to prevent hacks using  Forta's security features.\n",
+      "order": 2,
+      "explanations": [
+        {
+          "key": "intro-to-forta",
+          "title": "Introduction to Forta",
+          "shortTitle": "Intro",
+          "details": "### What is Forta\nForta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time. Forta's monitoring network and bots help keep an eye on smart contracts so you can be sure they're running smoothly. Forta also has several features that make transaction monitoring easy and efficient.\nForta is a network of independent node operators that scan all transactions and block-by-block state changes for outlier transactions and threats. When an issue is detected, node operators send alerts to subscribers of potential risks, which enables them to take action.  It is the first real-time detection network for the security & operational monitoring of blockchain activity. Forta offers real-time protection against potential risks and threats on the blockchain, so you can rest assured that your transactions are safe.\n\n### Use Cases of Forta and detection bots\n- Forta bots can be used to monitor the contract  - Develop complex mitigation scripts that query the API for specific bots' alerts and automate smart contract operations based on the received alerts - Notify users of potential threats and governance changes in the dApp - Build an extension to wallets such as Metamask to display warnings about a particular wallet address or smart contract users are about to interact with - Users can run scan nodes to receive FORT tokens and ensuring consensus - Analyze alerts from several blockchain projects and identify trends before making investment decisions as a financial analyst - Machine learning can be used to develop high level detection bots which makes the monitor even more efficient - Decide whether to provide coverage or process claims for a particular smart contract by analyzing its alerts to gauge its security as an insurance protocol\n\n### Example to build a Forta detection bot\nForta provides SDKs to build bots very easily in order to initialize the project run `npx forta-agent@latest init` in a new folder. Enter the password and open the project. The README file in the project will explain all the functionalities. The main file which we will be working on is agent.js in the src folder. Initially, the address will be for Tether but we can add more addresses to track.\n```javascript const { Finding, FindingSeverity, FindingType } = require(\"forta-agent\"); // etherJs can also be imported from the forta-agent\nconst ERC20_TRANSFER_EVENT =\n  \"event Transfer(address indexed from, address indexed to, uint256 value)\";\n// By default the address is provided for tether but we can monitor any chain const TETHER_ADDRESS = \"0xdAC17F958D2ee523a2206206994597C13D831ec7\"; const TETHER_DECIMALS = 6; let findingsCount = 0; // This is the main function logic should be implemented in the body of the function const handleTransaction = async (txEvent) => {\n  const findings = [];\n  // The findings is the return value of this function which is an array of all findings according to the logic\n  // limiting this agent to emit only 5 findings so that the alert feed is not spammed\n  if (findingsCount >= 5) return findings;\n\n  // filter the transaction logs for Tether transfer events\n  const tetherTransferEvents = txEvent.filterLog(\n    ERC20_TRANSFER_EVENT,\n    TETHER_ADDRESS\n  );\n  // the above value will have the list of all tether token transactions in the ethereum blockchain\n  // Each value in the tetherTransferEvents is an object with to,from and value as keys\n  tetherTransferEvents.forEach((transferEvent) => {\n    // extract transfer event arguments\n    const { to, from, value } = transferEvent.args;\n    // shift decimals of transfer value\n    const normalizedValue = value.div(10 ** TETHER_DECIMALS); // normalizing the value in order to neglect decimals\n\n    // if more than 10,000 Tether were transferred, report it\n    if (normalizedValue.gt(10000)) { // normalizedValue.gt(100000) is same as normalizedValue>100000\n      // if the transfer is above 100000 tether then we are adding an object to the findings array\n      findings.push(\n        Finding.fromObject({\n          name: \"High Tether Transfer\",\n          description: `High amount of USDT transferred: ${normalizedValue}`,\n          alertId: \"FORTA-1\",\n          severity: FindingSeverity.Low,\n          type: FindingType.Info,\n          metadata: {\n            to,\n            from,\n          },\n        })\n      );\n      findingsCount++; // we are increasing the count to prevent excess findings\n    }\n  });\n\n  return findings; // this returned findings will be sent to the scanner nodes\n};\n// const initialize = async () => { //   // do some initialization on startup e.g. fetch data // }\n// This is also an important function instead of monitoring the trasaction by using this function we can monitor the block\n const handleBlock = async (blockEvent) => {\n   const findings = [];\n   // detect some block condition\n   return findings;\n };\n\n// const handleAlert = async (alertEvent) => { //   const findings = []; //   // detect some alert condition //   return findings; // };\nmodule.exports = {\n  // initialize,\n  handleTransaction,\n  // handleBlock,\n  // handleAlert,\n  ERC20_TRANSFER_EVENT, // exported for unit tests\n  TETHER_ADDRESS, // exported for unit tests\n  TETHER_DECIMALS, // exported for unit tests\n};\n```\n"
+        },
+        {
+          "key": "how-forta-works",
+          "title": "Working of Forta",
+          "shortTitle": "Working",
+          "details": "### How Forta works?\nForta basically divided into four parts they are SCanner nodes, Detection bots, Assigner, and Analyzer.\n* **Scan node**\n    Scan nodes run detection bots and are registered in a polygon smart contract. They use JSON-RPC to read blockchain data and pass it to detection bots. After processing, the bot sends findings to the scan node, which emits a signed report to the Analyser API. Scan nodes receive FORT rewards for high SLA and must stake FORT to prevent malicious behavior.\n\n* **Detection bot**\n    Detection bots are an important part of blockchain security. They scan each block and transaction from a chain and perform custom logic to detect conditions. These data are provided by the scan nodes. Each detection bot should be registered in the bot registry smartcontract on polygon. It should be deployed in multiple scan nodes for redundancy and security. Detection bots should be able to make API calls. Detection bots can maintain internal state for anomaly detection. SDK’s(software development kits) are provided for Typescript, Javascript, and Python for creating detection bots. The `handleTransaction` and `handleBlock` are two important functions in the detection bot.\n    You can create detection bots using any language that supports gRPC. To prevent malicious behavior, these bots should stake FORT tokens. They should also execute in isolation, running as a Docker container on a dedicated docker network. Docker is a platform that uses OS-level virtualization software to help users develop, deploy and manage applications, running them in a Docker Container complete with all their relevant library dependencies. In order to learn more about docker refer: [Link](https://docs.docker.com/).\n\n* **Assigner**\n    The assigner assigns and unassigns detection bots and scan nodes via a Dispatch smart contract on the polygon. It loads all the scanner and the bots constantly updating its database and decides what should be mapped to which node. All bots will run on six scan nodes meaning each bot will get the data from six scan nodes. This is done to maintain consensus security and availability of nodes. Currently, the assigner is centralized but it will eventually become decentralized.\n\n* **Analyzer**\n    The Analyzer is the cloud-based component of Forta that allows for the sending of alerts to a private API. The scan nodes send the alerts to the private API, which then authenticates the scanner nodes, verifies that they are registered and staked, and validates the signatures on all artifacts sent from scanners. The Analyzer will also store alerts in a central database, as well as trigger notifications for users via Slack, Discord, Telegram, Email, or webhooks. When an alert is generated, a post request will be created via webhook. The Analyzer is currently centralized.\n"
+        },
+        {
+          "key": "why-Forta",
+          "title": "Why Forta",
+          "shortTitle": "Why Forta",
+          "details": "### Why Forta?\nThere have been a lot of Defi protocol hacks in recent years. With the number of protocols increasing, auditing and monitoring have become more difficult. The emerging Defi protocol needs more auditing to ensure the safety of users' funds.\nIn January of 2022, a wormhole protocol lost over 320 million dollars worth of assets due to a hack. This is just one example of how, as the Web3 economy grows in value and complexity, security has become an increasingly critical concern. In the first quarter of 2022 alone, more than one billion dollars were lost to hacks and exploits - some of which weren't even discovered until days after the initial attack. This highlights the need for real-time security and operational monitoring so that protocols and investors can react quickly to threats and prevent or minimize loss of funds.\nReliability is always a big issue when it comes to data and scans, but Forta has that covered by developing detection bots that work to maintain consensus and reliable information. Each bot is assigned to six different scan nodes in order to keep things consistent and prevent any mix-ups. In order to be a scan node, you must provide a stake and be able to prove that you scanned every block. However, if you happen to not meet the established service levels that the community has agreed upon, then you'll get slashed.\nWhile there are other auditing protocols out there, Forta is more flexible because it offers detection bots that can monitor the contract as well as using machine learning for additional monitoring.\n"
+        },
+        {
+          "key": "fort-token",
+          "title": "FORT tokens",
+          "shortTitle": "FORT",
+          "details": "# FORT token\nFORT is an ERC-20 token in the Ethereum network. (Address: _0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29_).\nTo ensure the accuracy and integrity of the data provided by the network, Forta adopts a work token model, where node runners must stake FORT tokens in order to broadcast real-time security and operational data to the network, and anyone may stake FORT tokens in order to signal detection bot quality in the network.\nFort Tokens are used especially for two cases.\n**Node runners** : Node runners should stake FORT tokens in order to prevent malicious behavior. Since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously.\n**Detection bot signaling** :FORT tokens are staked in detection bots signaling bot quality to the network.  Having fake or low-quality bots on the network makes it harder to find the best risk-detection offerings.\n"
+        },
+        {
+          "key": "prevent-hack-forta",
+          "title": "Forta's Prevention of Hack Attacks",
+          "shortTitle": "Prevention of hack",
+          "details": "### How Forta could have prevented million dollars hacks\nlet's take a look at a real-world hack that occurred and how forta could have helped prevent it poly network is a protocol that enables cross-chain interoperability and sending assets across different blockchains in august of 2021 the poly network was exploited across multiple chains amounting to funds lost of up to 600 million us dollars the largest defy hack in history. The exploit took place over 184 blocks or a duration of about 40 minutes with forta runtime threat detection the exploit could have been flagged within seconds and mitigated to prevent any losses. Source: [link](https://en.wikipedia.org/wiki/Poly_Network_exploit#:~:text=They%20posted%20a%20Q%26A%20to,returned%20first%20on%20August%2011.).\nThere is a function in the Victim protocol's contract that allows you to run cross-chain transactions it verifies that the transaction is from one of the authorized **bookkeepers** as set in the eth cross-chain data contract and then executes that transaction. Basically, the **bookkeeper** is an address that can make any transaction and it had a function modifier of onlyOwner.\nThe hacker found an exploit here and carefully crafted an exploit transaction that invoked the setter function to change the **bookkeeper** to an address they controlled once assigned as the bookkeeper they could make transactions to withdraw any amount of funds.\nIf we have deployed forta detection bots in the contract we can make logic to check that if there is a change in the **bookkeeper** immediately return findings which could create an alert.\nSo instantly the contract can be paused other measures can be taken. This is very great because these detection bots can monitor 24/7. Using machine learning we can improvise these bots a lot.\n"
+        }
+      ],
+      "questions": [
+        {
+          "uuid": "2762e581-607b-4cdc-a5dc-a88d4f0e0a14",
+          "type": "SingleChoice",
+          "content": "What is Forta?",
+          "hint": "NoHint",
+          "explanation": "Forta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Forta is a platform for creating smart contracts",
+              "key": "A"
+            },
+            {
+              "content": "Forta is a tool for transferring digital assets",
+              "key": "B"
+            },
+            {
+              "content": "Forta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time",
+              "key": "C"
+            },
+            {
+              "content": "Forta is a system for storing information in an encrypted form",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "0ad1f799-7421-461d-8f7c-90c405a8260d",
+          "type": "SingleChoice",
+          "content": "What is rewarded to successful scan nodes?",
+          "hint": "Scan nodes",
+          "explanation": "Successful scan nodes are rewarded with FORT tokens. The amount of token depends on their SLA.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Resources like ethereum",
+              "key": "A"
+            },
+            {
+              "content": "FORT tokens",
+              "key": "B"
+            },
+            {
+              "content": "No rewards",
+              "key": "C"
+            },
+            {
+              "content": "500 usd annually",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e9dfcfd0-dbac-4245-aa20-6463093091bd",
+          "type": "SingleChoice",
+          "content": "What are the two important functions in the detection bot?",
+          "hint": "NoHint",
+          "explanation": "handleTransaction and handleBlock are two important functions in the detection bot.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "handleTransaction and handleBlock",
+              "key": "A"
+            },
+            {
+              "content": "findings",
+              "key": "B"
+            },
+            {
+              "content": "ERC20_TRANSFER_EVENT",
+              "key": "C"
+            },
+            {
+              "content": "tetherTransferEvents",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "0b447a17-a65a-4ad2-8c45-632e6275d683",
+          "type": "SingleChoice",
+          "content": "What programming language can be used to create detection bots?",
+          "hint": "NoHint",
+          "explanation": "Detection bots can be created using any language that supports gRPC.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Typescript",
+              "key": "A"
+            },
+            {
+              "content": "Any language that supports gRPC",
+              "key": "B"
+            },
+            {
+              "content": "Javascript",
+              "key": "C"
+            },
+            {
+              "content": "Python",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b4a93cf2-26dc-453a-b706-69591b992b6e",
+          "type": "SingleChoice",
+          "content": "What component of Forta will authenticate and validate the scan nodes?",
+          "hint": "NoHint",
+          "explanation": "Analyzer will authenticate and validate the scan nodes. It will trigger alerts according to the findings from the scan nodes.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "Forta Admin",
+              "key": "A"
+            },
+            {
+              "content": "Scanner Nodes",
+              "key": "B"
+            },
+            {
+              "content": "Analyzer",
+              "key": "C"
+            },
+            {
+              "content": "Assigner",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f35497c2c-b86f-4b95-b308-a211ce5c28d7",
+          "type": "MultipleChoice",
+          "content": "Why each detection bot is connected to six nodes?",
+          "hint": "NoHint",
+          "explanation": "Every detection bots will run on six scan nodes meaning each bot will get the data from six scan nodes. This is done to maintain consensus security and availability of nodes.",
+          "answerKeys": [
+            "A",
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "To maintain consensus",
+              "key": "A"
+            },
+            {
+              "content": "To get data availability",
+              "key": "B"
+            },
+            {
+              "content": "To decrease the gas cost",
+              "key": "C"
+            },
+            {
+              "content": "To incentivize the subscribers",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "fc469cde-7fc3-41e6-bf04-3c434df5bae3",
+          "type": "SingleChoice",
+          "content": "What is the function of Assigner?",
+          "hint": "NoHint",
+          "explanation": "The Assigner will assigns and deassigns the scanner nodes and detection bots. It is currently centralized.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "It will authorize the nodes and triggers alerts from the findings",
+              "key": "A"
+            },
+            {
+              "content": "It will scan the blockchain",
+              "key": "B"
+            },
+            {
+              "content": "It will search for bugs in the code",
+              "key": "C"
+            },
+            {
+              "content": "It will assign and deassigns scanner nodes and detection bots",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "eee443a8-0042-4236-85cf-abe68357bd55",
+          "type": "SingleChoice",
+          "content": "Why detection bots and scanner nodes should stake FORT tokens?",
+          "hint": "NoHint",
+          "explanation": "Detection bot and scanner nodes should stake FORT tokens to prevent malicious activities.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "To prevent malicious activity",
+              "key": "A"
+            },
+            {
+              "content": "To make profit to the protocol",
+              "key": "B"
+            },
+            {
+              "content": "To generate interest",
+              "key": "C"
+            },
+            {
+              "content": "None of these",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ac810303-66fd-4e01-8acb-baa0587a49f4",
+          "type": "MultipleChoice",
+          "content": "In which function in the detection bot we should implement the logic to detect threats?",
+          "hint": "NoHint",
+          "explanation": "The custom logic to detect threats is to be implemented in handleTransaction and handleBlock functions.",
+          "answerKeys": [
+            "A",
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "handleTransaction",
+              "key": "A"
+            },
+            {
+              "content": "tetherTransferEvents",
+              "key": "B"
+            },
+            {
+              "content": "handleBlock",
+              "key": "C"
+            },
+            {
+              "content": "FindingType",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e6b58900-f452-449e-a30a-a4b252571ee5",
+          "type": "SingleChoice",
+          "content": "How scanner node will send findings to the Analyzer?",
+          "hint": "NoHint",
+          "explanation": "Scanner node will make a API call to send findings to the Analyzer.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "By storing data in the blockchain",
+              "key": "A"
+            },
+            {
+              "content": "Using the Private API of Analyzer",
+              "key": "B"
+            },
+            {
+              "content": "Only detection bot will send the findings to Analyzer",
+              "key": "C"
+            },
+            {
+              "content": "By sending findings to the Assigner",
               "key": "D"
             }
           ]
