@@ -1,0 +1,227 @@
+- key: intro-to-forta
+  title: Introduction to Forta
+  shortTitle: Intro
+  details: >
+    # Forta
+
+    # What is Forta
+
+    Forta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time. Forta's monitoring network and bots help keep an eye on smart contracts so you can be sure they're running smoothly. Forta also has several features that make transaction monitoring easy and efficient.
+
+    Forta is a network of independent node operators that scan all transactions and block-by-block state changes for outlier transactions and threats. When an issue is detected, node operators send alerts to subscribers of potential risks, which enables them to take action.  It is the first real-time detection network for the security & operational monitoring of blockchain activity. Forta offers real-time protection against potential risks and threats on the blockchain, so you can rest assured that your transactions are safe.
+
+
+    # Use Cases of Forta and forta bots
+    * Forta bots can be used to monitor the contract
+    * Forta can be used to detect threats and send alerts instantly
+    * Users can run scan nodes to receive FORT tokens
+    * The detection bots can monitor 24/7 so the protection and security of contract will increase
+    * Machine learning can be used to develop high level detection bots which makes the monitor even more efficient
+
+    ### How to build a Forta bot?
+    Forta provides SDKs to build bots very easily in order to initialize the project run `npx forta-agent@latest init` in a new folder.
+    Enter the password and open the project. The README file in the project will explain all the functionalities. The main file which we will be working on is agent.js in the src folder. Initially, the address will be for Tether but we can add more addresses to track.
+
+    ```javascript
+    const { Finding, FindingSeverity, FindingType } = require("forta-agent");
+    // etherJs can also be imported from the forta-agent
+
+    const ERC20_TRANSFER_EVENT =
+      "event Transfer(address indexed from, address indexed to, uint256 value)";
+    // By default the address is provided for tether but we can monitor any chain
+    const TETHER_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
+    const TETHER_DECIMALS = 6;
+    let findingsCount = 0;
+    // This is the main function logic should be implemented in the body of the function
+    const handleTransaction = async (txEvent) => {
+      const findings = [];
+      // The findings is the return value of this function which is an array of all findings according to the logic
+      // limiting this agent to emit only 5 findings so that the alert feed is not spammed
+      if (findingsCount >= 5) return findings;
+
+      // filter the transaction logs for Tether transfer events
+      const tetherTransferEvents = txEvent.filterLog(
+        ERC20_TRANSFER_EVENT,
+        TETHER_ADDRESS
+      );
+      // the above value will have the list of all tether token transactions in the ethereum blockchain
+      // Each value in the tetherTransferEvents is an object with to,from and value as keys
+      tetherTransferEvents.forEach((transferEvent) => {
+        // extract transfer event arguments
+        const { to, from, value } = transferEvent.args;
+        // shift decimals of transfer value
+        const normalizedValue = value.div(10 ** TETHER_DECIMALS); // normalizing the value in order to neglect decimals
+
+        // if more than 10,000 Tether were transferred, report it
+        if (normalizedValue.gt(10000)) { // normalizedValue.gt(100000) is same as normalizedValue>100000
+          // if the transfer is above 100000 tether then we are adding an object to the findings array
+          findings.push(
+            Finding.fromObject({
+              name: "High Tether Transfer",
+              description: `High amount of USDT transferred: ${normalizedValue}`,
+              alertId: "FORTA-1",
+              severity: FindingSeverity.Low,
+              type: FindingType.Info,
+              metadata: {
+                to,
+                from,
+              },
+            })
+          );
+          findingsCount++; // we are increasing the count to prevent excess findings
+        }
+      });
+
+      return findings; // this returned findings will be sent to the scanner nodes
+    };
+
+    // const initialize = async () => {
+    //   // do some initialization on startup e.g. fetch data
+    // }
+    
+    // This is also an important function instead of monitoring the trasaction by using this function we can monitor the block
+     const handleBlock = async (blockEvent) => {
+       const findings = [];
+       // detect some block condition
+       return findings;
+     };
+
+    // const handleAlert = async (alertEvent) => {
+    //   const findings = [];
+    //   // detect some alert condition
+    //   return findings;
+    // };
+
+    module.exports = {
+      // initialize,
+      handleTransaction,
+      // handleBlock,
+      // handleAlert,
+      ERC20_TRANSFER_EVENT, // exported for unit tests
+      TETHER_ADDRESS, // exported for unit tests
+      TETHER_DECIMALS, // exported for unit tests
+    };
+
+    ```
+   
+
+- key: how-forta-works
+  title: Working of Forta
+  shortTitle: Working
+  details: >
+    # How Forta works?
+    Forta basically divided into four parts they are SCanner nodes, Detection bots, Assigner, and Analyzer.
+    
+    * **Scan node**
+        Scan nodes run detection bots and are registered in a polygon smart contract. They use JSON-RPC to read blockchain data and pass it to detection bots. After processing, the bot sends findings to the scan node, which emits a signed report to the Analyser API. Scan nodes receive FORT rewards for high SLA and must stake FORT to prevent malicious behavior.
+
+    * **Detection bot**
+        Detection bots are an important part of blockchain security. They scan each block and transaction from a chain and perform custom logic to detect conditions. These data are provided by the scan nodes. Each detection bot should be registered in the bot registry smartcontract on polygon. It should be deployed in multiple scan nodes for redundancy and security. Detection bots should be able to make API calls. Detection bots can maintain internal state for anomaly detection. SDK’s(software development kits) are provided for Typescript, Javascript, and Python for creating detection bots. The `handleTransaction` and `handleBlock` are two important functions in the detection bot.
+        You can create detection bots using any language that supports gRPC. To prevent malicious behavior, these bots should stake FORT tokens. They should also execute in isolation, running as a Docker container on a dedicated docker network. Docker is a platform that uses OS-level virtualization software to help users develop, deploy and manage applications, running them in a Docker Container complete with all their relevant library dependencies. In order to learn more about docker refer: [Link](https://docs.docker.com/).
+
+    * **Assigner**
+        The assigner assigns and unassigns detection bots and scan nodes via a Dispatch smart contract on the polygon. It loads all the scanner and the bots constantly updating its database and decides what should be mapped to which node. All bots will run on six scan nodes meaning each bot will get the data from six scan nodes. This is done to maintain consensus security and availability of nodes. Currently, the assigner is centralized but it will eventually become decentralized.
+
+    * **Analyzer**
+        The Analyzer is the cloud-based component of Forta that allows for the sending of alerts to a private API. The scan nodes send the alerts to the private API, which then authenticates the scanner nodes, verifies that they are registered and staked, and validates the signatures on all artifacts sent from scanners. The Analyzer will also store alerts in a central database, as well as trigger notifications for users via Slack, Discord, Telegram, Email, or webhooks. When an alert is generated, a post request will be created via webhook. The Analyzer is currently centralized.
+
+
+- key: defender-admin
+  title: Defender Admin
+  shortTitle: Admin
+  details: >
+    ### Why Forta?
+    There have been a lot of Defi protocol hacks in recent years. With the number of protocols increasing, auditing and monitoring have become more difficult. The emerging Defi protocol needs more auditing to ensure the safety of users' funds.
+
+    In January of 2022, a wormhole protocol lost over 320 million dollars worth of assets due to a hack. This is just one example of how, as the Web3 economy grows in value and complexity, security has become an increasingly critical concern. In the first quarter of 2022 alone, more than one billion dollars were lost to hacks and exploits - some of which weren't even discovered until days after the initial attack. This highlights the need for real-time security and operational monitoring so that protocols and investors can react quickly to threats and prevent or minimize loss of funds.
+
+    Reliability is always a big issue when it comes to data and scans, but Forta has that covered by developing detection bots that work to maintain consensus and reliable information. Each bot is assigned to six different scan nodes in order to keep things consistent and prevent any mix-ups. In order to be a scan node, you must provide a stake and be able to prove that you scanned every block. However, if you happen to not meet the established service levels that the community has agreed upon, then you'll get slashed.
+
+    While there are other auditing protocols out there, Forta is more flexible because it offers detection bots that can monitor the contract as well as using machine learning for additional monitoring.
+- key: fort-token
+  title: FORT tokens
+  shortTitle: FORT
+  details: >
+    # FORT token
+
+    FORT is an ERC-20 token in the Ethereum network. (Address: _0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29_).
+
+    To ensure the accuracy and integrity of the data provided by the network, Forta adopts a work token model, where node runners must stake FORT tokens in order to broadcast real-time security and operational data to the network, and anyone may stake FORT tokens in order to signal detection bot quality in the network.
+
+    Fort Tokens are used especially for two cases.
+
+    **Node runners**: Node runners should stake FORT tokens in order to prevent malicious behavior. Since the staked FORT can be slashed if nodes fail to execute their assigned work or perform their work maliciously.
+
+    **Detection bot signaling: **FORT tokens are staked in detection bots signaling bot quality to the network.  Having fake or low-quality bots on the network makes it harder to find the best risk-detection offerings.
+- key: defender-admin
+  title: Defender Admin
+  shortTitle: Admin
+  details: >
+    # How Forta could have prevented million dollars hacks
+
+    let's take a look at a real-world hack that occurred and how forta could have helped prevent it poly network is a protocol that enables cross-chain interoperability and sending assets across different blockchains in august of 2021 the poly network was exploited across multiple chains amounting to funds lost of up to 600 million us dollars the largest defy hack in history. The exploit took place over 184 blocks or a duration of about 40 minutes with forta runtime threat detection the exploit could have been flagged within seconds and mitigated to prevent any losses. Source: [link](https://en.wikipedia.org/wiki/Poly_Network_exploit#:~:text=They%20posted%20a%20Q%26A%20to,returned%20first%20on%20August%2011.).
+
+    There is a function in the Victim protocol's contract that allows you to run cross-chain transactions it verifies that the transaction is from one of the authorized **bookkeepers** as set in the eth cross-chain data contract and then executes that transaction. Basically, the **bookkeeper **is an address that can make any transaction and it had a function modifier of onlyOwner.
+
+    The hacker found an exploit here and carefully crafted an exploit transaction that invoked the setter function to change the **bookkeeper** to an address they controlled once assigned as the bookkeeper they could make transactions to withdraw any amount of funds.
+
+    If we have deployed forta detection bots in the contract we can make logic to check that if there is a change in the **bookkeeper **immediately return findings which could create an alert.
+
+    So instantly the contract can be paused other measures can be taken. This is very great because these detection bots can monitor 24/7. Using machine learning we can improvise these bots a lot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

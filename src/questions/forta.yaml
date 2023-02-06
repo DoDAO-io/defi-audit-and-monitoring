@@ -1,0 +1,179 @@
+- uuid: 2762e581-607b-4cdc-a5dc-a88d4f0e0a14
+  type: SingleChoice
+  content: What is Forta?
+  hint: NoHint
+  explanation: Forta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time.
+  answerKeys:
+    - C
+  difficultyLevel: "Low"
+  choices:
+    - content: Forta is a platform for creating smart contracts
+      key: A
+    - content: Forta is a tool for transferring digital assets
+      key: B
+    - content: Forta is a decentralized monitoring network that helps detect threats and anomalies on DeFi, NFT, governance, bridges, and other Web3 systems in real-time
+      key: C
+    - content: Forta is a system for storing information in an encrypted form
+      key: D
+
+- uuid: 0ad1f799-7421-461d-8f7c-90c405a8260d
+  type: SingleChoice
+  content: What is rewarded to successful scan nodes?
+  hint: Scan nodes
+  explanation: Successful scan nodes are rewarded with FORT tokens. The amount of token depends on their SLA.
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: Resources like ethereum
+      key: A
+    - content: FORT tokens
+      key: B
+    - content: No rewards
+      key: C
+    - content: 500 usd annually
+      key: D
+- uuid: e9dfcfd0-dbac-4245-aa20-6463093091bd
+  type: SingleChoice
+  content: What are the two important functions in the detection bot?
+  hint: NoHint
+  explanation: handleTransaction and handleBlock are two important functions in the detection bot.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: handleTransaction and handleBlock
+      key: A
+    - content: findings
+      key: B
+    - content: ERC20_TRANSFER_EVENT
+      key: C
+    - content: tetherTransferEvents
+      key: D
+- uuid: 0b447a17-a65a-4ad2-8c45-632e6275d683
+  type: SingleChoice
+  content: What programming language can be used to create detection bots?
+  hint: NoHint
+  explanation: Detection bots can be created using any language that supports gRPC. 
+  answerKeys:
+    - B
+  difficultyLevel: "Low"
+  choices:
+    - content: Typescript
+      key: A
+    - content: Any language that supports gRPC
+      key: B
+    - content: Javascript
+      key: C
+    - content: Python
+      key: D
+- uuid: b4a93cf2-26dc-453a-b706-69591b992b6e
+  type: SingleChoice
+  content: What component of Forta will authenticate and validate the scan nodes?
+  hint: NoHint
+  explanation: Analyzer will authenticate and validate the scan nodes. It will trigger alerts according to the findings from the scan nodes.
+  answerKeys:
+    - C
+  difficultyLevel: "High"
+  choices:
+    - content: Forta Admin
+      key: A
+    - content: Scanner Nodes
+      key: B
+    - content: Analyzer
+      key: C
+    - content: Assigner
+      key: D
+- uuid: f35497c2c-b86f-4b95-b308-a211ce5c28d7
+  type: MultipleChoice
+  content: Why each detection bot is connected to six nodes?
+  hint: NoHint
+  explanation: Every detection bots will run on six scan nodes meaning each bot will get the data from six scan nodes. This is done to maintain consensus security and availability of nodes.
+  answerKeys:
+    - A
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: To maintain consensus
+      key: A
+    - content: To get data availability
+      key: B
+    - content: To decrease the gas cost
+      key: C
+    - content: To incentivize the subscribers
+      key: D
+
+   
+- uuid: fc469cde-7fc3-41e6-bf04-3c434df5bae3
+  type: SingleChoice
+  content: What is the function of Assigner?
+  hint: NoHint
+  explanation: The Assigner will assigns and deassigns the scanner nodes and detection bots. It is currently centralized.
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: It will authorize the nodes and triggers alerts from the findings
+      key: A
+    - content: It will scan the blockchain
+      key: B
+    - content: It will search for bugs in the code
+      key: C
+    - content: It will assign and deassigns scanner nodes and detection bots
+      key: D
+
+
+- uuid: eee443a8-0042-4236-85cf-abe68357bd55
+  type: SingleChoice
+  content: Why detection bots and scanner nodes should stake FORT tokens?
+  hint: NoHint
+  explanation: Detection bot and scanner nodes should stake FORT tokens to prevent malicious activities.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: To prevent malicious activity
+      key: A
+    - content: To make profit to the protocol
+      key: B
+    - content: To generate interest
+      key: C
+    - content: None of these
+      key: D
+
+- uuid: ac810303-66fd-4e01-8acb-baa0587a49f4
+  type: MultipleChoice
+  content: In which function in the detection bot we should implement the logic to detect threats?
+  hint: NoHint
+  explanation: The custom logic to detect threats is to be implemented in handleTransaction and handleBlock functions.
+  answerKeys:
+    - A
+    - C
+  difficultyLevel: "Medium"
+  choices:
+    - content: handleTransaction
+      key: A
+    - content: tetherTransferEvents
+      key: B
+    - content: handleBlock
+      key: C
+    - content: FindingType
+      key: D
+
+- uuid: e6b58900-f452-449e-a30a-a4b252571ee5
+  type: SingleChoice
+  content: How scanner node will send findings to the Analyzer?
+  hint: NoHint
+  explanation: Transaction must have a To, From, or Address (from the log) that matches the configured address. The transaction condition should be matched if specified.
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: By storing data in the blockchain
+      key: A
+    - content: Using the Private API of Analyzer
+      key: B
+    - content: Only detection bot will send the findings to Analyzer
+      key: C
+    - content: By sending findings to the Assigner
+      key: D
+
