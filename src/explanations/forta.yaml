@@ -202,6 +202,15 @@
     - **Detection bot signaling** :FORT tokens are staked in detection bots
     signaling bot quality to the network.  Having fake or low-quality bots on
     the network makes it harder to find the best risk-detection offerings.
+- key: example-of-a-bot
+  shortTitle: Example
+  details: |-
+    Example
+
+    Example
+
+    Example
+  title: Example of a Bot
 - key: prevent-hack-forta
   title: Forta's Prevention of Hack Attacks
   shortTitle: Prevention of hack
@@ -236,12 +245,3 @@
     So instantly the contract can be paused other measures can be taken. This is
     very great because these detection bots can monitor 24/7. Using machine
     learning we can improvise these bots a lot.
-- key: example-of-a-bot
-  shortTitle: Example
-  details: |-
-    Example
-
-    Example
-
-    Example
-  title: Example of a Bot

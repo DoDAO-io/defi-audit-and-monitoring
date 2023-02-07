@@ -434,16 +434,16 @@
           "title": "FORT tokens"
         },
         {
-          "key": "prevent-hack-forta",
-          "title": "Forta's Prevention of Hack Attacks",
-          "shortTitle": "Prevention of hack",
-          "details": "### How Forta could have prevented million dollars hacks\nlet's take a look at a real-world hack that occurred and how forta could have helped prevent it poly network is a protocol that enables cross-chain interoperability and sending assets across different blockchains in august of 2021 the poly network was exploited across multiple chains amounting to funds lost of up to 600 million us dollars the largest defy hack in history. The exploit took place over 184 blocks or a duration of about 40 minutes with forta runtime threat detection the exploit could have been flagged within seconds and mitigated to prevent any losses. Source: [link](https://en.wikipedia.org/wiki/Poly_Network_exploit#:~:text=They%20posted%20a%20Q%26A%20to,returned%20first%20on%20August%2011.).\nThere is a function in the Victim protocol's contract that allows you to run cross-chain transactions it verifies that the transaction is from one of the authorized **bookkeepers** as set in the eth cross-chain data contract and then executes that transaction. Basically, the **bookkeeper** is an address that can make any transaction and it had a function modifier of onlyOwner.\nThe hacker found an exploit here and carefully crafted an exploit transaction that invoked the setter function to change the **bookkeeper** to an address they controlled once assigned as the bookkeeper they could make transactions to withdraw any amount of funds.\nIf we have deployed forta detection bots in the contract we can make logic to check that if there is a change in the **bookkeeper** immediately return findings which could create an alert.\nSo instantly the contract can be paused other measures can be taken. This is very great because these detection bots can monitor 24/7. Using machine learning we can improvise these bots a lot.\n"
-        },
-        {
           "key": "example-of-a-bot",
           "shortTitle": "Example",
           "details": "Example\n\nExample\n\nExample",
           "title": "Example of a Bot"
+        },
+        {
+          "key": "prevent-hack-forta",
+          "title": "Forta's Prevention of Hack Attacks",
+          "shortTitle": "Prevention of hack",
+          "details": "### How Forta could have prevented million dollars hacks\nlet's take a look at a real-world hack that occurred and how forta could have helped prevent it poly network is a protocol that enables cross-chain interoperability and sending assets across different blockchains in august of 2021 the poly network was exploited across multiple chains amounting to funds lost of up to 600 million us dollars the largest defy hack in history. The exploit took place over 184 blocks or a duration of about 40 minutes with forta runtime threat detection the exploit could have been flagged within seconds and mitigated to prevent any losses. Source: [link](https://en.wikipedia.org/wiki/Poly_Network_exploit#:~:text=They%20posted%20a%20Q%26A%20to,returned%20first%20on%20August%2011.).\nThere is a function in the Victim protocol's contract that allows you to run cross-chain transactions it verifies that the transaction is from one of the authorized **bookkeepers** as set in the eth cross-chain data contract and then executes that transaction. Basically, the **bookkeeper** is an address that can make any transaction and it had a function modifier of onlyOwner.\nThe hacker found an exploit here and carefully crafted an exploit transaction that invoked the setter function to change the **bookkeeper** to an address they controlled once assigned as the bookkeeper they could make transactions to withdraw any amount of funds.\nIf we have deployed forta detection bots in the contract we can make logic to check that if there is a change in the **bookkeeper** immediately return findings which could create an alert.\nSo instantly the contract can be paused other measures can be taken. This is very great because these detection bots can monitor 24/7. Using machine learning we can improvise these bots a lot.\n"
         }
       ],
       "questions": [
