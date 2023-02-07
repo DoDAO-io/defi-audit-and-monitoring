@@ -122,6 +122,15 @@
     };
 
     ```
+- key: example-of-a-bot
+  shortTitle: Example
+  details: |-
+    Example
+
+    Example
+
+    Example
+  title: Example of a Bot
 - key: how-forta-works
   title: Working of Forta
   shortTitle: Working
@@ -143,15 +152,6 @@
 
     * **Analyzer**
         The Analyzer is the cloud-based component of Forta that allows for the sending of alerts to a private API. The scan nodes send the alerts to the private API, which then authenticates the scanner nodes, verifies that they are registered and staked, and validates the signatures on all artifacts sent from scanners. The Analyzer will also store alerts in a central database, as well as trigger notifications for users via Slack, Discord, Telegram, Email, or webhooks. When an alert is generated, a post request will be created via webhook. The Analyzer is currently centralized.
-- key: example-of-a-bot
-  shortTitle: Example
-  details: |-
-    Example
-
-    Example
-
-    Example
-  title: Example of a Bot
 - key: why-Forta
   title: Why Forta
   shortTitle: Why Forta
