@@ -16,23 +16,7 @@
     - content: Forta is a system for storing information in an encrypted form
       key: D
 
-- uuid: 0ad1f799-7421-461d-8f7c-90c405a8260d
-  type: SingleChoice
-  content: What is rewarded to successful scan nodes?
-  hint: Scan nodes
-  explanation: Successful scan nodes are rewarded with FORT tokens. The amount of token depends on their SLA.
-  answerKeys:
-    - B
-  difficultyLevel: "Medium"
-  choices:
-    - content: Resources like ethereum
-      key: A
-    - content: FORT tokens
-      key: B
-    - content: No rewards
-      key: C
-    - content: 500 usd annually
-      key: D
+
 - uuid: e9dfcfd0-dbac-4245-aa20-6463093091bd
   type: SingleChoice
   content: What are the two important functions in the detection bot?
@@ -50,23 +34,7 @@
       key: C
     - content: tetherTransferEvents
       key: D
-- uuid: 0b447a17-a65a-4ad2-8c45-632e6275d683
-  type: SingleChoice
-  content: What programming language can be used to create detection bots?
-  hint: NoHint
-  explanation: Detection bots can be created using any language that supports gRPC. 
-  answerKeys:
-    - B
-  difficultyLevel: "Low"
-  choices:
-    - content: Typescript
-      key: A
-    - content: Any language that supports gRPC
-      key: B
-    - content: Javascript
-      key: C
-    - content: Python
-      key: D
+
 - uuid: b4a93cf2-26dc-453a-b706-69591b992b6e
   type: SingleChoice
   content: What component of Forta will authenticate and validate the scan nodes?
@@ -84,6 +52,7 @@
       key: C
     - content: Assigner
       key: D
+
 - uuid: f35497c2c-b86f-4b95-b308-a211ce5c28d7
   type: MultipleChoice
   content: Why each detection bot is connected to six nodes?
@@ -104,23 +73,6 @@
       key: D
 
    
-- uuid: fc469cde-7fc3-41e6-bf04-3c434df5bae3
-  type: SingleChoice
-  content: What is the function of Assigner?
-  hint: NoHint
-  explanation: The Assigner will assigns and deassigns the scanner nodes and detection bots. It is currently centralized.
-  answerKeys:
-    - D
-  difficultyLevel: "Medium"
-  choices:
-    - content: It will authorize the nodes and triggers alerts from the findings
-      key: A
-    - content: It will scan the blockchain
-      key: B
-    - content: It will search for bugs in the code
-      key: C
-    - content: It will assign and deassigns scanner nodes and detection bots
-      key: D
 
 
 - uuid: eee443a8-0042-4236-85cf-abe68357bd55
@@ -160,21 +112,53 @@
     - content: FindingType
       key: D
 
-- uuid: e6b58900-f452-449e-a30a-a4b252571ee5
+
+- uuid: 0aec7adc-7547-4ea5-a0f1-bd549f6481d2
   type: SingleChoice
-  content: How scanner node will send findings to the Analyzer?
+  content: Could the poly network exploit have been prevented with Forta?
   hint: NoHint
-  explanation: Scanner node will make a API call to send findings to the Analyzer.
+  explanation: The poly exploit can be prevented with forta by setting the logic in the detection bot.
   answerKeys:
-    - B
+    - A
   difficultyLevel: "Medium"
   choices:
-    - content: By storing data in the blockchain
+    - content: "Yes"
       key: A
-    - content: Using the Private API of Analyzer
+    - content: "No"
       key: B
-    - content: Only detection bot will send the findings to Analyzer
+
+- uuid: 7bb28946-d70e-47ae-9117-85e8241e8c15
+  type: SingleChoice
+  content: What are the some use cases of forta?
+  hint: NoHint
+  explanation: Forta bots can help you keep an eye on your contract so you can be alerted of any potential threats or changes in governance. As a financial analyst, you can use Forta to analyze trends in alerts from different blockchain projects before making investment decisions.
+  answerKeys:
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: Forta can be used to monitor smart contracts
+      key: A
+    - content: Forta can be used to notify users of potential threats and governance changes in the dApp
+      key: B
+    - content: Analyze alerts from several blockchain projects and identify trends before making investment decisions as a financial analyst
       key: C
-    - content: By sending findings to the Assigner
+    - content: All the above
       key: D
 
+- uuid: 8da4df52-d987-4781-9ee2-f8301f46e299
+  type: SingleChoice
+  content: Which of the following is not correct about forta bots?
+  hint: NoHint
+  explanation: The personal information of anyone using a wallet address in the anonymous web3.0 is untraceable.
+  answerKeys:
+    - C
+  difficultyLevel: "Medium"
+  choices:
+    - content: Forta can be used to build a smart contract safety checker tool
+      key: A
+    - content: Forta can be used to notify users of potential threats and governance changes in the dApp
+      key: B
+    - content: Forta can be used to find the personal information of hacker by using the wallet address
+      key: C
+    - content: Machine learning can be used to develop forta bots
+      key: D

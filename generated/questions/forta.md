@@ -24,22 +24,6 @@ Sub Topics: No Sub-Topics
 
 ---
 
-##### What is rewarded to successful scan nodes?  
-
-- [ ]  Resources like ethereum
-- [x]  FORT tokens
-- [ ]  No rewards
-- [ ]  500 usd annually
-  
-Hint: Scan nodes
-         
-Explanation: Successful scan nodes are rewarded with FORT tokens. The amount of token depends on their SLA.
-
-Sub Topics: No Sub-Topics
- 
-
----
-
 ##### What are the two important functions in the detection bot?  
 
 - [x]  handleTransaction and handleBlock
@@ -50,22 +34,6 @@ Sub Topics: No Sub-Topics
 Hint: NoHint
          
 Explanation: handleTransaction and handleBlock are two important functions in the detection bot.
-
-Sub Topics: No Sub-Topics
- 
-
----
-
-##### What programming language can be used to create detection bots?  
-
-- [ ]  Typescript
-- [x]  Any language that supports gRPC
-- [ ]  Javascript
-- [ ]  Python
-  
-Hint: NoHint
-         
-Explanation: Detection bots can be created using any language that supports gRPC.
 
 Sub Topics: No Sub-Topics
  
@@ -104,22 +72,6 @@ Sub Topics: No Sub-Topics
 
 ---
 
-##### What is the function of Assigner?  
-
-- [ ]  It will authorize the nodes and triggers alerts from the findings
-- [ ]  It will scan the blockchain
-- [ ]  It will search for bugs in the code
-- [x]  It will assign and deassigns scanner nodes and detection bots
-  
-Hint: NoHint
-         
-Explanation: The Assigner will assigns and deassigns the scanner nodes and detection bots. It is currently centralized.
-
-Sub Topics: No Sub-Topics
- 
-
----
-
 ##### Why detection bots and scanner nodes should stake FORT tokens?  
 
 - [x]  To prevent malicious activity
@@ -152,16 +104,46 @@ Sub Topics: No Sub-Topics
 
 ---
 
-##### How scanner node will send findings to the Analyzer?  
+##### Could the poly network exploit have been prevented with Forta?  
 
-- [ ]  By storing data in the blockchain
-- [x]  Using the Private API of Analyzer
-- [ ]  Only detection bot will send the findings to Analyzer
-- [ ]  By sending findings to the Assigner
+- [x]  Yes
+- [ ]  No
   
 Hint: NoHint
          
-Explanation: Scanner node will make a API call to send findings to the Analyzer.
+Explanation: The poly exploit can be prevented with forta by setting the logic in the detection bot.
+
+Sub Topics: No Sub-Topics
+ 
+
+---
+
+##### What are the some use cases of forta?  
+
+- [ ]  Forta can be used to monitor smart contracts
+- [ ]  Forta can be used to notify users of potential threats and governance changes in the dApp
+- [ ]  Analyze alerts from several blockchain projects and identify trends before making investment decisions as a financial analyst
+- [x]  All the above
+  
+Hint: NoHint
+         
+Explanation: Forta bots can help you keep an eye on your contract so you can be alerted of any potential threats or changes in governance. As a financial analyst, you can use Forta to analyze trends in alerts from different blockchain projects before making investment decisions.
+
+Sub Topics: No Sub-Topics
+ 
+
+---
+
+##### Which of the following is not correct about forta bots?  
+
+- [ ]  Forta can be used to build a smart contract safety checker tool
+- [ ]  Forta can be used to notify users of potential threats and governance changes in the dApp
+- [x]  Forta can be used to find the personal information of hacker by using the wallet address
+- [ ]  Machine learning can be used to develop forta bots
+  
+Hint: NoHint
+         
+Explanation: The personal information of anyone using a wallet address in the anonymous web3.0 is untraceable.
 
 Sub Topics: No Sub-Topics
  
