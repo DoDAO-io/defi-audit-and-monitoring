@@ -144,6 +144,7 @@
     Reliability is always a big issue when it comes to data and scans, but Forta has that covered by developing detection bots that work to maintain consensus and reliable information. Each bot is assigned to six different scan nodes in order to keep things consistent and prevent any mix-ups. In order to be a scan node, you must provide a stake and be able to prove that you scanned every block. However, if you happen to not meet the established service levels that the community has agreed upon, then you'll get slashed.
 
     While there are other auditing protocols out there, Forta is more flexible because it offers detection bots that can monitor the contract as well as using machine learning for additional monitoring.
+    
 - key: fort-token
   title: FORT tokens
   shortTitle: FORT
