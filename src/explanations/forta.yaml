@@ -176,6 +176,15 @@
     Forta is more flexible than other auditing protocols because it offers
     detection bots that can monitor the contract and uses machine learning for
     additional monitoring.
+- key: example-of-a-bot
+  shortTitle: Example
+  details: |-
+    Example
+
+    Example
+
+    Example
+  title: Example of a Bot
 - key: fort-token
   title: FORT tokens
   shortTitle: FORT
@@ -202,15 +211,6 @@
     - **Detection bot signaling** :FORT tokens are staked in detection bots
     signaling bot quality to the network.  Having fake or low-quality bots on
     the network makes it harder to find the best risk-detection offerings.
-- key: example-of-a-bot
-  shortTitle: Example
-  details: |-
-    Example
-
-    Example
-
-    Example
-  title: Example of a Bot
 - key: prevent-hack-forta
   title: Forta's Prevention of Hack Attacks
   shortTitle: Prevention of hack
