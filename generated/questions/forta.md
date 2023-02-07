@@ -134,7 +134,7 @@ Sub Topics: No Sub-Topics
 
 ---
 
-##### Which of the following is not correct about forta bots?  
+##### Which of the following is not correct about forta?  
 
 - [ ]  Forta can be used to build a smart contract safety checker tool
 - [ ]  Forta can be used to notify users of potential threats and governance changes in the dApp

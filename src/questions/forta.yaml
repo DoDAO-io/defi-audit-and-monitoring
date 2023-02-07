@@ -147,7 +147,7 @@
 
 - uuid: 8da4df52-d987-4781-9ee2-f8301f46e299
   type: SingleChoice
-  content: Which of the following is not correct about forta bots?
+  content: Which of the following is not correct about forta?
   hint: NoHint
   explanation: The personal information of anyone using a wallet address in the anonymous web3.0 is untraceable.
   answerKeys:
