@@ -63,16 +63,25 @@
 
     ```javascript 
 
-    const { Finding, FindingSeverity, FindingType } = require("forta-agent"); //
-    etherJs can also be imported from the forta-agent
+    // etherJs can also be imported from the forta-agent
+
+    const { Finding, FindingSeverity, FindingType } = require("forta-agent"); 
+
 
     const ERC20_TRANSFER_EVENT =
       "event Transfer(address indexed from, address indexed to, uint256 value)";
+
     // By default the address is provided for tether but we can monitor any
-    chain const TETHER_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
-    const TETHER_DECIMALS = 6; let findingsCount = 0; // This is the main
-    function logic should be implemented in the body of the function const
-    handleTransaction = async (txEvent) => {
+    chain const TETHER_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7"; 
+
+    const TETHER_DECIMALS = 6; 
+
+    let findingsCount = 0; 
+
+
+    // This is the main function logic should be implemented in the body of the 
+
+    function const handleTransaction = async (txEvent) => {
       const findings = [];
       // The findings is the return value of this function which is an array of all findings according to the logic
       // limiting this agent to emit only 5 findings so that the alert feed is not spammed
