@@ -65,23 +65,17 @@
 
     // etherJs can also be imported from the forta-agent
 
-    const { Finding, FindingSeverity, FindingType } = require("forta-agent"); 
-
+    const { Finding, FindingSeverity, FindingType } = require("forta-agent");
+    // etherJs can also be imported from the forta-agent
 
     const ERC20_TRANSFER_EVENT =
       "event Transfer(address indexed from, address indexed to, uint256 value)";
-
-    // By default the address is provided for tether but we can monitor any
-    chain const TETHER_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7"; 
-
-    const TETHER_DECIMALS = 6; 
-
-    let findingsCount = 0; 
-
-
-    // This is the main function logic should be implemented in the body of the 
-
-    function const handleTransaction = async (txEvent) => {
+    // By default the address is provided for tether but we can monitor any chain
+    const TETHER_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
+    const TETHER_DECIMALS = 6;
+    let findingsCount = 0;
+    // This is the main function logic should be implemented in the body of the function
+    const handleTransaction = async (txEvent) => {
       const findings = [];
       // The findings is the return value of this function which is an array of all findings according to the logic
       // limiting this agent to emit only 5 findings so that the alert feed is not spammed
@@ -124,7 +118,6 @@
       return findings; // this returned findings will be sent to the scanner nodes
     };
 
-<<<<<<< HEAD
     // const initialize = async () => {
     //   // do some initialization on startup e.g. fetch data
     // }
@@ -135,21 +128,12 @@
       // detect some block condition
       return findings;
     };
-=======
-    // const initialize = async () => { //   // do some initialization on
-    startup e.g. fetch data // }
 
-    // This is also an important function instead of monitoring the trasaction
-    by using this function we can monitor the block
-     const handleBlock = async (blockEvent) => {
-       const findings = [];
-       // detect some block condition
-       return findings;
-     };
->>>>>>> 03df409706bad8e36669fb379208abe82f86ddd1
-
-    // const handleAlert = async (alertEvent) => { //   const findings = [];
-    //   // detect some alert condition //   return findings; // };
+    // const handleAlert = async (alertEvent) => {
+    //   const findings = [];
+    //   // detect some alert condition
+    //   return findings;
+    // };
 
     module.exports = {
       // initialize,
