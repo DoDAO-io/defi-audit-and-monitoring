@@ -38,7 +38,8 @@ const ERC20_TRANSFER_EVENT =
     const normalizedValue = value.div(10 ** TETHER_DECIMALS); // normalizing the value in order to neglect decimals
 
     // if more than 10,000 Tether were transferred, report it
-    if (normalizedValue.gt(10000)) { // normalizedValue.gt(100000) is same as normalizedValue>100000
+    if (normalizedValue.gt(10000)) {
+      // normalizedValue.gt(100000) is same as normalizedValue>100000
       // if the transfer is above 100000 tether then we are adding an object to the findings array
       findings.push(
         Finding.fromObject({
@@ -60,13 +61,11 @@ const ERC20_TRANSFER_EVENT =
   return findings; // this returned findings will be sent to the scanner nodes
 };
 // const initialize = async () => { //   // do some initialization on startup e.g. fetch data // }
-// This is also an important function instead of monitoring the trasaction by using this function we can monitor the block
- const handleBlock = async (blockEvent) => {
-   const findings = [];
-   // detect some block condition
-   return findings;
- };
-
+// This is also an important function instead of monitoring the trasaction by using this function we can monitor the block const handleBlock = async (blockEvent) => {
+  const findings = [];
+  // detect some block condition
+  return findings;
+};
 // const handleAlert = async (alertEvent) => { //   const findings = []; //   // detect some alert condition //   return findings; // };
 module.exports = {
   // initialize,
@@ -77,6 +76,7 @@ module.exports = {
   TETHER_ADDRESS, // exported for unit tests
   TETHER_DECIMALS, // exported for unit tests
 };
+
 ```
  
  **Working of Forta**        
